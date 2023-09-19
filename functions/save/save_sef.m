@@ -1,6 +1,6 @@
 function save_sef(savefilename,thedata,SamplingRate,Channels,events,firstindex,nAux)
 
-% Update: 11.2022
+% Update: 08.2023
 % =========================================================================
 %
 % Saves data as a Cartool simple EEG data file
@@ -43,7 +43,7 @@ function save_sef(savefilename,thedata,SamplingRate,Channels,events,firstindex,n
 
 %% Check inputs
 
-if nargin > 4
+if nargin > 5
     if ~isempty(firstindex) && (firstindex ~= 0 && firstindex ~= 1)
         error(['This input argument must be either empty (default), 0, or 1. First index value entered: ' num2str(firstindex)]);
     end

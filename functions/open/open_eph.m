@@ -21,7 +21,7 @@ function [header,thedata,events] = open_eph(openfilename)
 % - (optional) 'events' as a 3D cell array
 %   - column 1 is a cell array of numeric onsets for each event
 %   - column 2 is a cell array of numeric offsets for each event
-%   - column 2 is a cell array of numeric or string codes for each event
+%   - column 3 is a cell array of numeric or string codes for each event
 %
 % FUNCTION CALLED (for events)
 % - open_mrk
