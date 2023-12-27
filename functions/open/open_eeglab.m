@@ -49,7 +49,7 @@ end
 header.NumChan = SETfile.nbchan;
 %Channels = strings(NumChan,1);
 for channel = 1:header.NumChan
-    header.Channels(channel,1:length(SETfile.chanlocs(channel).labels)) = SETfile.chanlocs(channel).labels;
+    %header.Channels(channel,1:length(SETfile.chanlocs(channel).labels)) = SETfile.chanlocs(channel).labels;
     %Channels = char(Channels); % format adapted to Cartool SEF files (maybe not necessary)
 end
 header.NumTF = SETfile.pnts; % Is the epoch size...
@@ -83,12 +83,12 @@ end
 
 
 %% EVENTS
-
+events={}; %No event export !!
 if nargout > 2 && ~isempty(SETfile.event)
     header.firstindex = 1; % In EEGlab, 1st time-frame is 1
-    events = struct2table(SETfile.event); % Maybe could be directly converted to cell...
-    % events = table2array(struct2table(SETfile.event)); % Maybe a tiny bit complicated...
-    % events = struct2table(SETfile.event); % Maybe a tiny bit complicated...
+    %events = struct2table(SETfile.event(:,1)); % Maybe could be directly converted to cell...
+     %events = table2array(struct2table(SETfile.event)); % Maybe a tiny bit complicated...
+     %events = struct2table(SETfile.event); % Maybe a tiny bit complicated...
 elseif isempty(SETfile.event)
     disp('The file contains no events.')
     events = [];
