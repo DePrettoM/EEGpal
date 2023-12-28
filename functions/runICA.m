@@ -19,6 +19,9 @@ EEG = pop_runica(EEG, 'icatype', 'runica', 'extended',1,'interrupt','on');
 EEG = pop_saveset( EEG, 'filename','Interoception_CAS_P006_20112023_synch1_filtered_ICA.set','filepath','C:\\software\\EEG_processing_pipeline\\EEGpalCS\\EEGpal\\temp\\ICA_with_EEGlab\\');
 [ALLEEG, EEG, CURRENTSET] = eeg_store(ALLEEG, EEG, CURRENTSET);
 
+
+
+
 %Tag the EEG component
 EEG = pop_iclabel(EEG, 'default'); 
 [ALLEEG, EEG, CURRENTSET] = eeg_store(ALLEEG, EEG, CURRENTSET);
