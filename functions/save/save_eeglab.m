@@ -63,7 +63,9 @@ function save_eeglab(SETfilename,thedata,SamplingRate,events,firstindex,channels
 if nargin > 4
     if firstindex == 0
         correvent = 1;
-    elseif firstindex == 1 || isempty(firstindex) % if firstindex not definded (or is 1), do not correct
+    elseif isempty(firstindex) % if firstindex not definded (or is 1), do not correct
+        correvent = 0;
+    elseif firstindex == 1
         correvent = 0;
     else
         error(['This input argument must be either empty, 0, or 1 (default). First index value entered: ' num2str(firstindex)]);
