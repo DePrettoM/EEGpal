@@ -83,15 +83,27 @@ end
 
 
 %% EVENTS
-events={}; %No event export !!
+events=[]; %No event export !!
 [NbEvents,~]=size(SETfile.event); %number of Event
 if nargout > 2 && ~isempty(SETfile.event)
-    header.firstindex = 1; % In EEGlab, 1st time-frame is 1
-    events=zeros(NbEvents,3);
-    for k=1:NbEvents
-        events(k,1)=SETfile.event(k).latency(k);
-        events(k,2)=SETfile.event(k).latency(k)+SETfile.event(k).duration(k);
-        events(k,3)=SETfile.event(k).type;
+    if isfield(SETfile.event,'duration')
+        header.firstindex = 1; % In EEGlab, 1st time-frame is 1
+        events=zeros(NbEvents,3);
+        for k=1:NbEvents
+            events(k,1)=SETfile.event(k).latency(k);
+            events(k,2)=SETfile.event(k).latency(k)+SETfile.event(k).duration(k);
+            events(k,3)=SETfile.event(k).type;
+        end
+    else
+        [~,NbEvents]=size(SETfile.event); 
+        header.firstindex = 1; % In EEGlab, 1st time-frame is 1
+        events=zeros(NbEvents,3);
+        for k=1:NbEvents
+            events(k,1)=SETfile.event(k).latency;
+            events(k,2)=SETfile.event(k).latency;
+            events(k,3)=SETfile.event(k).edftype;
+        end
+        disp('This .set file has been saved with EEGlab. The event duration is missing. The duration of each event are set to one Time Frame');
     end
 
     %events = struct2table(SETfile.event(:,1)); % Maybe could be directly converted to cell...
