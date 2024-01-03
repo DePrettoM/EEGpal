@@ -218,6 +218,8 @@ else
     duration = Offsets - Onsets;    
     
     urevent = num2cell((1:length(type))'); % index of the event
+    latency=num2cell(latency); %modif michael mouthon, 02.01.2024
+    duration=num2cell(duration);
     EEG.event = struct('type',type,'latency',latency,'urevent',urevent,'duration',duration);    
 end
 EEG.urevent = EEG.event;    % original (ur) event structure containing all experimental
