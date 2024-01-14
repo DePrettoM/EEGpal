@@ -75,7 +75,8 @@ elseif ~isstring(events)
 end
 
 % Saving name
-if strcmpi(savefilename(end-3:end),'.mrk')
+[~,~,ext] = fileparts(savefilename); 
+if strcmpi(ext,'.mrk')
     MRKfilename = savefilename;
 else
     MRKfilename = char(strcat(savefilename,'.mrk'));
