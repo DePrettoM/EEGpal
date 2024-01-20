@@ -34,8 +34,8 @@ function save_els(savefilename,electrodestable,clusttype)
 
 
 %% READ INPUTS
-
-if ~strcmp(savefilename(end-3:end),'.els')
+[~,~,ext] = fileparts(savefilename);
+if ~strcmp(ext,'.els')
     error(['Specified file name ' savefilename ' is not an ELS file']);
 end
 
