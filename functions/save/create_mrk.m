@@ -1,6 +1,6 @@
 function create_mrk(savefilename,events,firstindex)
 
-% Update: 10.2022
+% Update: 12.2023
 % =========================================================================
 %
 % Creates a Cartool markers file ('.mrk')
@@ -75,8 +75,7 @@ elseif ~isstring(events)
 end
 
 % Saving name
-[~,~,ext] = fileparts(savefilename); 
-if strcmpi(ext,'.mrk')
+if endsWith(savefilename,'.mrk')
     MRKfilename = savefilename;
 else
     MRKfilename = char(strcat(savefilename,'.mrk'));

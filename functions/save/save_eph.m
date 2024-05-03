@@ -51,8 +51,7 @@ end
 
 
 %% SAVE EPH
-[~,~,ext] = fileparts(savefilename);
-if strcmp(ext,'.eph') == 1
+if strcmp(savefilename(end-3:end),'.eph') == 1
     numtimeframes = size(thedata,1);
     numchannels = size(thedata,2);
     if ~exist('samplingrate','var') || isempty(samplingrate)
@@ -70,7 +69,7 @@ if strcmp(ext,'.eph') == 1
     
     
 %% SAVE EP
-elseif strcmp(ext,'.ep') == 1
+elseif strcmp(savefilename(end-2:end),'.ep') == 1
     try % writematrix introduced in Matlab R2019a
         writematrix(thedata,[savefilename '.txt'],'Delimiter','tab');
         movefile([savefilename '.txt'],savefilename)
@@ -98,6 +97,6 @@ end
 
 %% CREATE MRK FILE
 if nargin > 3 && ~isempty(events)
-    MRK_file = strcat(savefilename, '.mrk'); % name of MRK file
+    MRK_file = [savefilename '.mrk']; % name of MRK file
     create_mrk(MRK_file,events,firstindex)
 end

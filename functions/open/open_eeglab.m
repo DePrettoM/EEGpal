@@ -1,6 +1,6 @@
 function [header,thedata,events] = open_eeglab(SETfilename)
 
-% Update: 03.2020
+% Update: 05.2024
 % =========================================================================
 %
 % Opens an EEGlab data file (.set/.fdt)
@@ -24,6 +24,8 @@ function [header,thedata,events] = open_eeglab(SETfilename)
 %   - 'type' is the code of each event
 %   - ('epoch' counts the epochs)
 %
+%
+% Update Event extraction by Michaël Mouthon
 %
 % Author: Michael De Pretto (Michael.DePretto@unifr.ch)
 %
@@ -49,7 +51,7 @@ end
 header.NumChan = SETfile.nbchan;
 %Channels = strings(NumChan,1);
 for channel = 1:header.NumChan
-    %header.Channels(channel,1:length(SETfile.chanlocs(channel).labels)) = SETfile.chanlocs(channel).labels;
+    header.Channels(channel,1:length(SETfile.chanlocs(channel).labels)) = SETfile.chanlocs(channel).labels;
     %Channels = char(Channels); % format adapted to Cartool SEF files (maybe not necessary)
 end
 header.NumTF = SETfile.pnts; % Is the epoch size...
@@ -106,9 +108,6 @@ if nargout > 2 && ~isempty(SETfile.event)
         disp('This .set file has been saved with EEGlab. The event duration is missing. The duration of each event are set to one Time Frame');
     end
 
-    %events = struct2table(SETfile.event(:,1)); % Maybe could be directly converted to cell...
-     %events = table2array(struct2table(SETfile.event)); % Maybe a tiny bit complicated...
-     %events = struct2table(SETfile.event); % Maybe a tiny bit complicated...
 elseif isempty(SETfile.event)
     disp('The file contains no events.')
     events = [];

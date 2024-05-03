@@ -1,6 +1,6 @@
 function save_eeglab(SETfilename,thedata,SamplingRate,events,firstindex,channels)
 
-% Update: 11.2022
+% Update: 02.2024
 % =========================================================================
 %
 % Saves data as EEGlab files (.set/.fdt)
@@ -63,9 +63,7 @@ function save_eeglab(SETfilename,thedata,SamplingRate,events,firstindex,channels
 if nargin > 4
     if firstindex == 0
         correvent = 1;
-    elseif isempty(firstindex) % if firstindex not definded (or is 1), do not correct
-        correvent = 0;
-    elseif firstindex == 1
+    elseif isempty(firstindex) || firstindex == 1 % if firstindex not definded (or is 1), do not correct
         correvent = 0;
     else
         error(['This input argument must be either empty, 0, or 1 (default). First index value entered: ' num2str(firstindex)]);
@@ -120,17 +118,17 @@ EEG.saved = 'no';                           % ['yes'|'no'] 'no' flags need to sa
 
 
 %% The data:
-%EEG.data = FDTfilename;
-%EEG.datfile = FDTfilename;  % name of the FDT file containing the data
-EEG.data = thedata';        % two-dimensional continuous data array (chans, frames)
+EEG.data = FDTfilename;
+EEG.datfile = FDTfilename;  % name of the FDT file containing the data
+%EEG.data = thedata';        % two-dimensional continuous data array (chans, frames)
                             % ELSE, three-dim. epoched data array (chans, frames, epochs)
 
 
 %% The channel locations sub-structures:
-if nargin < 5
+if nargin < 6
     EEG.chanlocs = [];  % structure array containing names and locations
                         % of the channels on the scalp
-elseif isstring(channels) && exist(channels,'file')
+elseif (ischar(channels) || isstring(channels)) && isfile(channels)
     CHAN_fileID = fopen(channels,'r'); % open FDTfilename for writing
     chanlocs = textscan(CHAN_fileID,'%d%f%f%s','delimiter','\n');
     indices = (chanlocs{1})';
@@ -190,7 +188,7 @@ else
     
     % EEG.event.type (events type)
     if isstring(Markers) || ischar(Markers)
-        type = Markers;
+        type = cellstr(Markers);
     elseif isnumeric(Markers)
         type = num2cell(Markers);
     else
@@ -205,7 +203,7 @@ else
     else
         error('Format of input data unsupported. Events latency array must be either numeric, string, or char arrays; or cell of numeric, string, or char arrays.');
     end
-    latency = Onsets;
+    latency = num2cell(Onsets);
     
     % EEG.event.duration
     if isstring(Offsets) || ischar(Offsets)
@@ -215,11 +213,9 @@ else
     else
         error('Format of input data unsupported. Events offset array must be either numeric, string, or char arrays; or cell of numeric, string, or char arrays.');
     end
-    duration = Offsets - Onsets;    
+    duration = num2cell(Offsets - Onsets);
     
     urevent = num2cell((1:length(type))'); % index of the event
-    latency=num2cell(latency); %modif michael mouthon, 02.01.2024
-    duration=num2cell(duration);
     EEG.event = struct('type',type,'latency',latency,'urevent',urevent,'duration',duration);    
 end
 EEG.urevent = EEG.event;    % original (ur) event structure containing all experimental
