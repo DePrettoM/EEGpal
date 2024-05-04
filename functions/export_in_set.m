@@ -39,22 +39,27 @@ function export_in_set(app, openfilename)
     %save
      try
         ElectrodeSetting    = app.SessionParameters.Electrodes.SettingTable([app.SessionParameters.Electrodes.SettingTable.include{:}],:);
-        Channels            = ElectrodeSetting(:,[6 7 2]);
-        Channels.labels     = char(Channels.labels);
+        Channels            = ElectrodeSetting(:,2);
+        %Channels.labels     = char(ElectrodeSetting.labels);
+
+        % Recompute Theta and Radius to match EEGlab orientation
+        [az,elev,~]         = cart2sph(ElectrodeSetting.y,-ElectrodeSetting.x,ElectrodeSetting.z); % Nasion: in Cartool = Y+, in EEGlab = X+; 
+        Channels.theta      = -rad2deg(az);
+        Channels.radius     = 0.5 - rad2deg(elev)/180;
         Channels.sph_theta  = -Channels.theta;
         Channels.sph_phi    = (0.5 - Channels.radius) * 180;
-        Channels.X          = ElectrodeSetting.x;
-        Channels.Y          = ElectrodeSetting.y;
+        Channels.X          = ElectrodeSetting.y;
+        Channels.Y          = -ElectrodeSetting.x;
         Channels.Z          = ElectrodeSetting.z;
-    %                         Channels.ref        = char(repmat({''},height(Channels),1));
-    %                         Channels.sph_radius = repmat({[]},height(Channels),1);
-    %                         Channels.types      = char(repmat({''},height(Channels),1));
-    %                         Channels.urchan     = repmat({[]},height(Channels),1);
+%                         Channels.ref        = char(repmat({''},height(Channels),1));
+%                         Channels.sph_radius = repmat({[]},height(Channels),1);
+%                         Channels.types      = char(repmat({''},height(Channels),1));
+%                         Channels.urchan     = repmat({[]},height(Channels),1);
         Channels            = table2struct(Channels);
+        save_eeglab(savefilename,data(:,:,1),header.SamplingRate,events,header.firstindex,Channels)
     catch
-        Channels = '';
+        save_eeglab(savefilename,data(:,:,1),header.SamplingRate,events,header.firstindex)
     end
-    save_eeglab(savefilename,data(:,:,1),header.SamplingRate,events,header.firstindex,Channels)
 
 end
 
