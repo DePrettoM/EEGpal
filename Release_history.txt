@@ -1,0 +1,19 @@
+EEGpal release history
+MD=Michael DePretto
+MM=Michael Mouthon
+
+
+Version 1.1 : 06.05.2024
+- Fusion of version of MD and MM
+- add of the ICA module
+- add of the FileCut module
+- correction of coordinate orientation in .set open/save
+- correction of open_eeglab script with the MM version (event load in a 3 columns matrix instead of table)
+- add the Bridge detection function in the interpolation module
+- creation of global variable app.AppPath to save the location of the toolbox
+- creation of global variable app.Version to save the version number of EEGpal, eeglab, clean_rawdata, cleanline, ICLabel. Value need a manual update in the startupFcn of the main EEGpal module. This info is used by modules to write the PIF
+- change of the structure of 'eeglab_plugins' folder. Installation of the full version of EEGLAB 2023.1 with clean_raw_data, cleanline, ICLabel install in it (updates). Suppression of all other sub-folders which was containing duplicate of function available in EEGLAB installation folder. 
+- small bug corrections
+
+Version tested and validate by MM the 06.05.2024.
+Small bugs remining: open_eeglab can not manager event name in text (but only numbers).
