@@ -1,0 +1,40 @@
+
+D'UNE MANIÈRE GÉNÉRALE
+
+Les fonctions open/save on été écrites pas moi ou adaptées de ce que Pierre Mégevand avait fait (ses scripts sont disponibles sur le site de Cartool). Toutes vérifiées pour correspondre à Cartool.
+
+
+FILTERING+
+
+- Resample      -> fonction Matalb
+- Filtres       -> fonctions Matalb, notamment basé sur ce qu'a fait Mike X Cohen
+			       https://urldefense.com/v3/__https://direct.mit.edu/books/monograph/4013/Analyzing-Neural-Time-Series-DataTheory-and__;!!Dc8iu7o!2WNaVkKS9wm1yHFjglf0vq9e3IdTagiafXtTS4-U_A6f-8rl1r0QATe-iWli7S40zdEbuulK0W4yR8B2KvVllf_3wECATC9z-CY$ 
+			       https://urldefense.com/v3/__https://mitpress.mit.edu/9780262035828/matlab-for-brain-and-cognitive-scientists/__;!!Dc8iu7o!2WNaVkKS9wm1yHFjglf0vq9e3IdTagiafXtTS4-U_A6f-8rl1r0QATe-iWli7S40zdEbuulK0W4yR8B2KvVllf_3wECAVgTVDpw$ 
+- CleanLine     -> EEGlab
+- CleanRawData  -> EEGlab
+
+
+INTERPOLATION
+
+- interpolate_perrinX   -> Même méthode que Cartool. Fonction écrite par Mike X Cohen
+                           https://urldefense.com/v3/__https://github.com/mikexcohen/AnalyzingNeuralTimeSeries__;!!Dc8iu7o!2WNaVkKS9wm1yHFjglf0vq9e3IdTagiafXtTS4-U_A6f-8rl1r0QATe-iWli7S40zdEbuulK0W4yR8B2KvVllf_3wECAWW3XvEs$ 
+						   A noter que EEGlab donne un résultat légèrement différent. On peut retrouver le résultat d'EEGlab en utilisant cette fonction et un changeant un des paramètres par défaut (je ne sais plus lequel)
+
+
+RE-REFERENCE
+
+- ref_change.m  -> fonction écrite par moi, basée sur ce qu'avait fait Pierre Mégevand. Résultat identique à Cartool.
+
+
+EPOCHING,
+
+- Il me semble qu'il n'y a pas de fonction particulière...
+
+
+FREQUENCYING
+
+- FFT   -> la computation utilise les fonctions Matlab, y compris le 'windowing'.
+           Résultats identiques à Cartool (à vérifier pour le windowing, mais si c'est différent, c'est une question de paramètre à ajuster)
+- FFTA  -> j'ai fait quelque améliorations par rapport à ce que fait Cartool, mais ce n'est pas validé...
+- Removing 1/f noise    -> 'Remove mean' est pas tout-à-fait identique à Cartool et non-validé
+                        -> 'Log transf.' est ce que fait EEGlab (il me semble), mais à mon avis pas une bonne option
