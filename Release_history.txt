@@ -17,3 +17,6 @@ Version 1.1 : 06.05.2024
 
 Version tested and validate by MM the 06.05.2024.
 Small bugs remining: open_eeglab can not manager event name in text (but only numbers).
+
+Version 1.2: 16.05.2024
+- correction from MichaelDP of the reading of .locs coordinate file with the EEGpalCS_mod_Electrodes module. 
