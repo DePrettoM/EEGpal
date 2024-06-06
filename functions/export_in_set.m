@@ -30,6 +30,12 @@ function export_in_set(app, openfilename)
     end
     disp('File loaded!')
     
+    % Remove unselected channels from the EEGpalCS Electrode Setting window
+    try
+        data = data(:,[app.SessionParameters.Electrodes.SettingTable.include{:}],:);
+    catch
+    end
+    
     %initialisation
     FreqName = "";
     nOutFiles = 1;
