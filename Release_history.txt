@@ -2,6 +2,16 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 1.2 : 10.06.2024
+- correction from MichaelDP of the reading of .locs coordinate file with the EEGpalCS_mod_Electrodes module. 
+- in module Filtering +, adding the possibility to use the official eeglab script (pop_eegfiltnew) to compute the filtering
+The user can still use the Signal Processing Toolbox script from Mathworks (filtfilt) to perform the filtering (default parameter). 
+- in the module Interpolation, adding the possibility to use the official eeglab script (pop_interp) to perform a spherical interpolation (use of .locs file). 
+The user can still use the Mike X Cohen script (interpolate_perrinX.m) which give similar result as the 3D Spline interpolation of Cartool (https://github.com/mikexcohen/AnalyzingNeuralTimeSeries/blob/main/interpolate_perrinX.m). This option is the default one.
+- in the module ICA, add the possibility to the user to ignore Bad channel from the ICA decomposition. These channels will saved untouch in the file result (not delated)
+- creation of module to detect electrod bridge (eBridge) on the raw data. It will generate a .xlsx file which can be load in the interpolation module. 
+This option has been add because you might need to know if there is bridged channels before to run ICA. 
+- correction of open_sef and open_eph in order that the events are a numerical matrix and not a cell array. 
 
 Version 1.1 : 06.05.2024
 - Fusion of version of MD and MM
@@ -17,6 +27,3 @@ Version 1.1 : 06.05.2024
 
 Version tested and validate by MM the 06.05.2024.
 Small bugs remining: open_eeglab can not manager event name in text (but only numbers).
-
-Version 1.2: 16.05.2024
-- correction from MichaelDP of the reading of .locs coordinate file with the EEGpalCS_mod_Electrodes module. 
