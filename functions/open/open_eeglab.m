@@ -1,6 +1,6 @@
 function [header,thedata,events] = open_eeglab(SETfilename)
 
-% Update: 03.2020
+% Update: 05.2024
 % =========================================================================
 %
 % Opens an EEGlab data file (.set/.fdt)
@@ -24,6 +24,8 @@ function [header,thedata,events] = open_eeglab(SETfilename)
 %   - 'type' is the code of each event
 %   - ('epoch' counts the epochs)
 %
+%
+% Update Event extraction by Michaël Mouthon
 %
 % Author: Michael De Pretto (Michael.DePretto@unifr.ch)
 %
@@ -83,12 +85,37 @@ end
 
 
 %% EVENTS
-
+events=[]; %No event export !!
+[NbEvents,~]=size(SETfile.event); %number of Event
 if nargout > 2 && ~isempty(SETfile.event)
-    header.firstindex = 1; % In EEGlab, 1st time-frame is 1
-    events = struct2table(SETfile.event); % Maybe could be directly converted to cell...
-    % events = table2array(struct2table(SETfile.event)); % Maybe a tiny bit complicated...
-    % events = struct2table(SETfile.event); % Maybe a tiny bit complicated...
+    if isfield(SETfile.event,'duration')
+        header.firstindex = 1; % In EEGlab, 1st time-frame is 1
+        events=zeros(NbEvents,3);
+        if ischar(SETfile.event(1).type) %test if the event are text
+            errordlg('Unfortunately, this function can not handle text in the event', 'text in event')
+            return
+        end
+        for k=1:NbEvents
+            events(k,1)=SETfile.event(k).latency;
+            events(k,2)=SETfile.event(k).latency+SETfile.event(k).duration;
+            events(k,3)=SETfile.event(k).type;
+        end
+    else
+        [~,NbEvents]=size(SETfile.event); 
+        header.firstindex = 1; % In EEGlab, 1st time-frame is 1
+        events=zeros(NbEvents,3);
+        if ischar(SETfile.event(1).edftype) %test if the event are text
+            errordlg('Unfortunately, this function can not handle text in the event', 'text in event')
+            return
+        end
+        for k=1:NbEvents
+            events(k,1)=SETfile.event(k).latency;
+            events(k,2)=SETfile.event(k).latency;
+            events(k,3)=SETfile.event(k).edftype;
+        end
+        disp('This .set file has been saved with EEGlab. The event duration is missing. The duration of each event are set to one Time Frame');
+    end
+
 elseif isempty(SETfile.event)
     disp('The file contains no events.')
     events = [];

@@ -191,7 +191,18 @@ if nargout > 2
             evt = evt + 1;
         end
     end
+
+    % add event in the presence of markerfile (.mrk)
+    MRKfile=[filename '.mrk'];
+    if isfile(MRKfile)
+        MRKevents=open_mrk(MRKfile);
+        MRKevents=cell2mat(MRKevents);
+        events=vertcat(events,[MRKevents(:,1)+1 MRKevents(:,3)]); %concatenate bdf event and mrk events
+        events=sortrows(events,1); %sort 
+    end
 end
+
+
 
 % Remove 'Status' channel
 header.NumChan = header.NumChan - 1;

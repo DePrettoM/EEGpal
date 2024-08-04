@@ -191,7 +191,6 @@ else
         type = cellstr(Markers);
     elseif isnumeric(Markers)
         type = num2cell(Markers);
-        %type = cellstr(num2str(Markers));
     else
         error('Format of input data unsupported. Events type array must be either numeric, string, or char arrays; or cell of numeric, string, or char arrays.');
     end

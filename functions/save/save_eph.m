@@ -49,6 +49,9 @@ else
     firstindex = [];
 end
 
+if isstring(savefilename) %if savefilename is string, convert to char
+    savefilename=convertStringsToChars(savefilename);
+end
 
 %% SAVE EPH
 if strcmp(savefilename(end-3:end),'.eph') == 1

@@ -1,10 +1,10 @@
-function [ElectrodesTable,NumElec] = open_loc(LOC_file)
+function [ElectrodesTable,nElec] = open_loc(LOC_file)
 
-% Update: 11.2022
+% Update: 05.2024
 % =========================================================================
 %
 % Opens an EEGLAB polar electrode coordinates file (.loc/.locs)
-% https://eeglab.org/tutorials/04_Import/Channel_Locations.html
+% https://urldefense.com/v3/__https://eeglab.org/tutorials/04_Import/Channel_Locations.html__;!!Dc8iu7o!2y0xODrAvoJaJ6zUzBQJ02E7hxVwU9WCt602nzZvJDpaKiC7JEClLEDDzpoYQojSIKCrQNyb28Ub5mKHL9khyke9DANfCIsUEEQ$ 
 %
 %
 % INPUTS
@@ -14,8 +14,8 @@ function [ElectrodesTable,NumElec] = open_loc(LOC_file)
 % - 'ElectrodesTable' is a 3-colmun table containing:
 %   - the number of each electrode
 %   - the degree and radius coordinates of each electrode
-%   - the labe of each electrode
-% - 'NumElec' is the number of electrodes
+%   - the label of each electrode
+% - 'nElec' is the number of electrodes
 %
 %
 % Author: Michael De Pretto (Michael.DePretto@unifr.ch)
@@ -43,17 +43,17 @@ end
 
 loc = textscan(fileID,'%s','delimiter','\n');
 loc = loc{1};
-NumElec = length(loc);
+nElec = length(loc);
 
-ElectrodesTable = table('Size',[NumElec 4],...
+ElectrodesTable = table('Size',[nElec 4],...
     'VariableTypes',{'double' 'double' 'double' 'string'},...
-    'VariableNames',{'Nr','Degree','Radius','Label'});
+    'VariableNames',{'nr','theta','radius','labels'});
 
-for elec = 1:NumElec
-    ElectrodesTable.nr(elec) = sscanf(loc{elec},'%d',1);
-    ElectrodesTable.theta(elec) = sscanf(loc{elec},'%*d %d',1);
-    ElectrodesTable.radius(elec) = sscanf(loc{elec},'%*d %*d %f',1);
-    ElectrodesTable.label(elec) = string(char(sscanf(loc{elec},'%*d %*d %*f %s',1)'));
+for elec = 1:nElec
+    ElectrodesTable.nr(elec)        = sscanf(loc{elec},'%d',1);
+    ElectrodesTable.theta(elec)     = sscanf(loc{elec},'%*d %d',1);
+    ElectrodesTable.radius(elec)    = sscanf(loc{elec},'%*d %*d %f',1);
+    ElectrodesTable.labels(elec)    = string(char(sscanf(loc{elec},'%*d %*d %*f %s',1)'));
 end
 
 fclose(fileID);

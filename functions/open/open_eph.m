@@ -1,6 +1,6 @@
 function [header,thedata,events] = open_eph(openfilename)
 
-% Update: 11.2022
+% Update: 06.2024
 % =========================================================================
 %
 % Opens a Cartool evoked potential data file (.ep(h))
@@ -19,16 +19,16 @@ function [header,thedata,events] = open_eph(openfilename)
 %   - dimension one represents time-frames
 %   - dimension two represents the electrodes
 % - (optional) 'events' as a 3D cell array
-%   - column 1 is a cell array of numeric onsets for each event
-%   - column 2 is a cell array of numeric offsets for each event
-%   - column 3 is a cell array of numeric or string codes for each event
+%   - column 1 is a array of numeric onsets for each event
+%   - column 2 is a array of numeric offsets for each event
+%   - column 3 is a array of numeric or string codes for each event
 %
 % FUNCTION CALLED (for events)
 % - open_mrk
 %
 % Original author of this script: pierre.megevand@medecine.unige.ch
 % Adapted by Michael De Pretto (Michael.DePretto@unifr.ch)
-%
+% Update by Michael Mouthon is order the events are num array and not a cell
 % =========================================================================
 
 
@@ -103,8 +103,15 @@ if nargout > 2
         %[MRKonset,~,MRKname] = open_mrk(MRK_file);
         %events = [MRKonset MRKname];
         events = open_mrk(MRK_file);
+        try
+            events=cell2mat(events);
+        catch
+            disp('Marker files contrains text which is not managed.')
+        end
     else
-        disp('MRK file not found. Events output created as empty cell array')
-        events = {};
+        %disp('MRK file not found. Events output created as empty cell array')
+        %events = {};
+        disp('MRK file not found. Events output created as empty num array')
+        events = [];
     end
 end
