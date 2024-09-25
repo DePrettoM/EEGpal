@@ -78,14 +78,14 @@ if strcmp(openfilename(end-3:end),'.eph')
 %% EP
 
 elseif strcmp(openfilename(end-2:end),'.ep')
-    if nargout > 1
+%     if nargout > 1 %modification done by MM the 25.09.2024 because need to have the NumTF at the EEGpal import
         thedata = load(openfilename);
         header.NumTF = size(thedata,1);
         header.NumChan = size(thedata,2);
         header.SamplingRate = 1;
-    else
-        header = 'EP file';
-    end
+%     else
+%         header = 'EP file';
+%     end
 else
     error('incorrect file type');
 end
