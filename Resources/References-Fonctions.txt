@@ -38,3 +38,7 @@ FREQUENCYING
 - FFTA  -> j'ai fait quelque améliorations par rapport à ce que fait Cartool, mais ce n'est pas validé...
 - Removing 1/f noise    -> 'Remove mean' est pas tout-à-fait identique à Cartool et non-validé
                         -> 'Log transf.' est ce que fait EEGlab (il me semble), mais à mon avis pas une bonne option
+
+
+FIND PEAKS
+- findpeaks	-> Official Matlab function which detect peaks in signal. It specifically look if the highest value is surround by smallest values (avoid to detect interval border as peaks). The function detect only local maxima. To detect local minimal, invert the signal. If serveral local peaks are detected in the specified interval, it generates a vector which each value. 

@@ -2,6 +2,14 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 1.3 : 26.09.2024
+- Improvement of ICA module. When it has to convert files in .set at the startup, add a progression bar. These temporary .set files are automatically delete after ICA decomposition because they are useless.
+- Correction of the title for the main windows as well as fileCut and ICA module. 
+- Modification of the script open_eph.m on line 81 in order that the loading of .ep file record the number of TF, number of channel in the header. The sampling rate still need to be enter manually after import. 
+- Creation of a new module 'FindPeaks' which has two functions. Firstly, it allows you to find the highest positive (max) or negative (min) peaks in the specified time interval. The module generates an Excel file with amplitude and position (relative to the beginning of the file and not from the origin specified in a possible header file). 
+  The user has the possibility to record a check file informing if no peaks (=1) or several peaks (=2) have been detected in the time interval. In the case of multiple peaks, the main output file will by default only record the maximum of the minimum. 
+  The second functionality of this module is to calculate the average of the signal in the specified time interval. This would be useful for extracting values to make plots.  
+
 Version 1.2 : 10.06.2024
 - correction from MichaelDP of the reading of .locs coordinate file with the EEGpalCS_mod_Electrodes module. 
 - in module Filtering +, adding the possibility to use the official eeglab script (pop_eegfiltnew) to compute the filtering

@@ -28,7 +28,10 @@ function [header,thedata,events] = open_eph(openfilename)
 %
 % Original author of this script: pierre.megevand@medecine.unige.ch
 % Adapted by Michael De Pretto (Michael.DePretto@unifr.ch)
-% Update by Michael Mouthon is order the events are num array and not a cell
+% - Update by Michael Mouthon is order the events are num array and not a cell
+% - Modification at line 81 in order that the provide the number of TF, number of channel in the
+% header. The sampling rate still need to be enter manually after import.
+% -25.09.2024
 % =========================================================================
 
 
