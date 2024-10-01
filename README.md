@@ -1,27 +1,70 @@
-# ![CartoolGitHubLogo5](https://github.com/DenisBrunet/Cartool/assets/145106558/60ad91e9-8f4b-4765-a68b-b6b4c7c14af3)
-**Cartool** is a software primarily designed as a scientific tool tailored for the **visualization and analysis of EEG data**, encompassing full recordings, resting states, evoked responses, intra-cranial activity, and more.
+# EEGpal
+EEGpal is an open-source Matlab-based software for automated/semi-automated EEG data pre-processing and analyses.
+It proposes Graphical User Interfaces (GUIs) that allow EEG pre-processing to be batched across participants with a high degree of flexibility in processing parameters. 
+It includes tools to :
+- filter data
+- detect channel bridges 
+- performed independant component decomposition/recomposition ICA
+- interpolate 
+- re-referencing
+- epoching
+- frequency analysis
+- EEG peaks analysis
+- cut EEG files
+- Export to another format 
+- *Other functionality will come*
+It manage many different of file format like *.bdf, .set/.fdt, .eph,.ep, .sef, .ris, .freq, .mrk *. 
+The purpose is to offer a complement to the free software Cartool developed by Denis Brunet (University of Geneva, reference:
+Brunet D., Murray M., Michel C. (2011) Spatiotemporal analysis of multichannel EEG: CARTOOL. Computational intelligence and neuroscience, vol. 2011, 813870. DOI : 10.1155/2011/813870).  
+It is also an alternative to the original EEGLAB GUI (reference: 
+Delorme, A., & Makeig, S. (2004). EEGLAB: an open-source toolbox for analysis of single-trial EEG dynamics. Journal of Neuroscience Methods, 134(1), 9-21. DOI: 10.1016/j.jneumeth.2003.10.009). 
 
-It enables seamless real-time integration of diverse modalities such as EEG, electrodes, and MRI. Offering an array of tools, including preprocessing for EEG, electrodes, and MRI, as well as frequency and micro-states analysis, and electrical source imaging.
+## How to install and run
+1. Download the EEGlab repository on your local drive.
+2. Add this folder to your local Matlab path (use of the command *setpath('path of the EEGpal folder')*.
+3. Use the command *EEGpal* to start the software.
 
-Developed in C++ for _Windows_, Cartool is highly optimized for parallel processing, has a very small memory footprint, and very few dependencies. It has been undergoing continuous development since 1996, thanks to the [_Functional Brain Mapping_](https://neurocenter-unige.ch/research-groups/christoph-michel/), Geneva, and [_CIBM_](https://www.cibm.ch), Lausanne.
+## How to use it
+*Throughout the Guided User Interfaces (GUIs) you will find additional information while pressing on the* `❓ buttons`.
+Otherwise you will find written tutorial files in the folder */Manuels* of this repository.
 
-## Compiling from sources
-The [BUILDING](https://github.com/DenisBrunet/Cartool/blob/main/BUILDING.md) page describes all the steps and the necessary tools needed to fully compile Cartool from the source code.
+## Cite the repository
+De Pretto M., EEGpal, (2024), GitHub repository, https://github.com/DePrettoM/EEGpal \
 
-You can also find the latest stable release already compiled here: [_Cartool Community Downloads_](https://sites.google.com/site/cartoolcommunity/downloads).
+## Dependencies
+| PLUGINS | Description |
+| ------ | ------ |
+| [EEGLAB v2023.1](https://github.com/sccn/eeglab) | Use in sveral places. Look at help to know more when it is used. |
+| [Signal processing toolbox]() | Use of the function filtfilt for filtering EEG data. | 
 
-## Contributing
-Our contribution policy is specified in the [CONTRIBUTING](https://github.com/DenisBrunet/Cartool/blob/main/CONTRIBUTING.md) page.
 
-## Citation
-We have some citations policy, please visit the [CITATION](https://github.com/DenisBrunet/Cartool/blob/main/CITATION.md) page.
+| EEGLAB EXTENSIONS | Description |
+| ------ | ------ |
+| [clean_rawdata v2.91]| Cleans raw EEG data. Contains ASR. |
+| [Cleanline v2.00]| Removes sinusoidal artifacts (line noise). |
+| [ICLabel v1.6]| Seven-category IC classifier using a neural network trained. |
+| [firflit v2.8]| Routines for filtering data. |
 
-## Community
-There are a few resources to gather knowledge and get some help:
-- [Cartool Community](https://sites.google.com/site/cartoolcommunity)
-- [Cartool Google Group](https://groups.google.com/g/cartool)
-- [Cartool YouTube](https://www.youtube.com/channel/UC7S3IgUeYplmrh3ji3ZK1Lw)
-- [CIBM](https://cibm.ch/)
+
+| ISOLATED FUNCTIONS | Desciption |
+| ------ | ------ |
+| [eBridge.m v0.1.01] (https://psychophysiology.cpmc.columbia.edu/software/eBridge/index.html)| Identify channels within an EEG montage forming a low-impedance |
+| [interpolate_perrinX] (https://github.com/mikexcohen/AnalyzingNeuralTimeSeries) |  interpolate electrodes using a 3D Spline method. Develop by Mike X Cohen |
+
+ The dependencies are already included in this repository (except for the Signal processing toolbox which is a comercial product of MathWorks).
+ 
+## Authors
+[**Michael De Pretto**](https://orcid.org/0000-0003-4176-4798)\
+*Scientific collaborator*\
+*Michael.DePretto@unige.ch*\
+*[Equipe de NeuroPsychoLinguistique](https://www.unige.ch/fapse/psycholinguistique/equipes/npl/membres/michael-de-pretto)*\
+*University of Geneva, Switzerland*
+
+[**Michael Mouthon**](https://orcid.org/0000-0002-2557-4102)\
+*Laboratory Engineer*\
+*michael.mouthon@unifr.ch*\
+*[FNDlab](https://www.unifr.ch/directory/fr/people/3229/6a825)*\
+*University of Fribourg, Switzerland*
 
 ## License
-This project is licensed under the _Apache License Version 2.0_ - see the [LICENSE.txt](https://github.com/DenisBrunet/Cartool/blob/main/LICENSE.txt) file for details.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
