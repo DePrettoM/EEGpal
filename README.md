@@ -12,12 +12,16 @@ It includes tools to :
 - EEG peaks analysis
 - cut EEG files
 - Export to another format 
-- *Other functionality will come*
+- Other functionality will come
+
 It manage many different of file format like *.bdf, .set/.fdt, .eph,.ep, .sef, .ris, .freq, .mrk *. 
 The purpose is to offer a complement to the free software Cartool developed by Denis Brunet (University of Geneva, reference:
 Brunet D., Murray M., Michel C. (2011) Spatiotemporal analysis of multichannel EEG: CARTOOL. Computational intelligence and neuroscience, vol. 2011, 813870. DOI : 10.1155/2011/813870).  
 It is also an alternative to the original EEGLAB GUI (reference: 
 Delorme, A., & Makeig, S. (2004). EEGLAB: an open-source toolbox for analysis of single-trial EEG dynamics. Journal of Neuroscience Methods, 134(1), 9-21. DOI: 10.1016/j.jneumeth.2003.10.009). 
+
+## Minimum requirement
+Matlab 2018b or later
 
 ## How to install and run
 1. Download the EEGlab repository on your local drive.
