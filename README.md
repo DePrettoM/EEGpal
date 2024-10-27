@@ -20,6 +20,8 @@ Brunet D., Murray M., Michel C. (2011) Spatiotemporal analysis of multichannel E
 It is also an alternative to the original EEGLAB GUI (reference: 
 Delorme, A., & Makeig, S. (2004). EEGLAB: an open-source toolbox for analysis of single-trial EEG dynamics. Journal of Neuroscience Methods, 134(1), 9-21. DOI: 10.1016/j.jneumeth.2003.10.009). 
 
+![](Manuels/MainGUI.png)
+
 ## Minimum requirement
 Matlab 2018b or later
 
