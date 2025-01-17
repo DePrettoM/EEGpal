@@ -26,16 +26,17 @@ Delorme, A., & Makeig, S. (2004). EEGLAB: an open-source toolbox for analysis of
 Matlab 2018b or later
 
 ## How to install and run
-1. Download the EEGlab repository on your local drive.
-2. Add this folder to your local Matlab path (use of the command *setpath('path of the EEGpal folder')*.
-3. Use the command *EEGpal* to start the software.
+1. Download the EEGpal repository on your local drive.
+2. If you have an eeglab version already mapped in your Matlab path, remove it (because it could generate conflict with the eeglab version include inside of EEGpal).
+3. Add this folder to your local Matlab path (use of the command *setpath('path of the EEGpal folder')*.
+4. Use the command *EEGpal* to start the software.
 
 ## How to use it
 *Throughout the Guided User Interfaces (GUIs) you will find additional information while pressing on the* `❓ buttons`.
 Otherwise you will find written tutorial files in the folder */Manuels* of this repository.
 
 ## Cite the repository
-De Pretto M., EEGpal, (2024), GitHub repository, https://github.com/DePrettoM/EEGpal \
+De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/DePrettoM/EEGpal \
 
 ## Dependencies
 | PLUGINS | Description |
