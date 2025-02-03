@@ -1,0 +1,26 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: EEGpal
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Michael
+    family-names: De Pretto
+    orcid: 'https://orcid.org/0000-0003-4176-4798'
+  - given-names: Michaël
+    family-names: Mouthon
+    orcid: 'https://orcid.org/0000-0002-2557-4102'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.14794980
+keywords:
+  - electroencephalography (EEG)
+  - preprocessing
+  - frequency analysis
+  - event-related potential (ERP)
+license: CC-BY-NC-4.0
+version: v1.3.0
