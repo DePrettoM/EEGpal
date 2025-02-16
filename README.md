@@ -9,10 +9,10 @@ It includes tools to :
 - re-referencing
 - epoching
 - frequency analysis
-- EEG peaks analysis
+- Peaks or Trace Export
+- Statistics on tracks
 - cut EEG files
 - Export to another format 
-- Other functionality will come
 
 It manage many different of file format like *.bdf, .set/.fdt, .eph,.ep, .sef, .ris, .freq, .mrk *. 
 The purpose is to offer a complement to the free software Cartool developed by Denis Brunet (University of Geneva, reference:
@@ -43,6 +43,7 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 | ------ | ------ |
 | [EEGLAB v2023.1](https://github.com/sccn/eeglab) | Use in sveral places. Look at help to know more when it is used. |
 | [Signal processing toolbox]() | Use of the function filtfilt for filtering EEG data. | 
+| [Statistics and Machine Learning Toolbox ]() | Use by the Statistics module. | 
 
 
 | EEGLAB EXTENSIONS | Description |

@@ -2,6 +2,16 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+
+Version 1.4 : 16.02.2025
+- Modification of the module 'FindPeaks' to a new module 'Peaks or Trace export' which permit in addition to the peaks detection/export to perform the export of a full portion of the signal (Trace export).
+- Modification of the 'Frequencying' module.  Correction of Normalization option (specialy the add of the 'by global averages Power option'. In addition, add of the option to use eeglab newtimef function to perform the frequency analysis.
+- Modification of the 'Full Design' developpement to specify a factorial study design (the development was unfinish which is no more the case).
+- Add the colum 'Factor_level' in the main Data table to set the factors level with the 'Full Design tool' 
+- Creation of the 'Statistics' module to perform statistic on Trace or inverse solution points. It permits to study all type of factorial design (replacement of STEN). 
+- Finish to write manual/help files for every modules of EEGpal.
+- various small bugs corrections
+
 Version 1.3 : 26.09.2024
 - Improvement of ICA module. When it has to convert files in .set at the startup, add a progression bar. These temporary .set files are automatically delete after ICA decomposition because they are useless.
 - Correction of the title for the main windows as well as fileCut and ICA module. 
