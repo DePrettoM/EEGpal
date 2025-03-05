@@ -24,6 +24,7 @@ Delorme, A., & Makeig, S. (2004). EEGLAB: an open-source toolbox for analysis of
 
 ## Minimum requirement
 Matlab 2018b or later
+Tested on Windows and Mac. Should work on Linux but not tested.
 
 ## How to install and run
 1. Download the EEGpal repository on your local drive.

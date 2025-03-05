@@ -57,7 +57,11 @@ function EEG = eeglab_datastruct(filename,thedata,SamplingRate,events,channels)
 %% Prepare information
 iDOT = strfind(filename,'.');
 SETfilename = strcat(filename(1:iDOT(end)),'set');
-iBS = strfind(SETfilename,'\');
+if ispc
+    iBS = strfind(SETfilename,'\');
+else
+    iBS = strfind(SETfilename,'/');
+end
 tUnit = 1000/SamplingRate; % time unit in seconds
 % if contains(Reference,'compute') % CHECK WHAT HAPPENS IF REFERENCE IS A DOUBLE
 %     Reference = Reference(8:end); % remove 'compute' %%% USE str2double IF A NUMBER (CHECK HOW)

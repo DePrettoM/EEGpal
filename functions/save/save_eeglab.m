@@ -85,7 +85,11 @@ end
 
 
 %% Prepare information
-iBS = strfind(SETfilename,'\'); % indices of backslashes
+if ispc
+    iBS = strfind(SETfilename,'\'); % indices of backslashes
+else
+    iBS = strfind(SETfilename,'/');
+end
 tUnit = 1000/SamplingRate; % time unit in seconds
 FDTfilename = strcat(SETfilename(1:end-3),'fdt'); % data file name
 % if contains(Reference,'compute') % CHECK WHAT HAPPENS IF REFERENCE IS A DOUBLE
