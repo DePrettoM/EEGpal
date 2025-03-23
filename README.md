@@ -14,7 +14,7 @@ It includes tools to :
 - cut EEG files
 - Export to another format 
 
-It manage many different of file format like *.bdf, .set/.fdt, .eph,.ep, .sef, .ris, .freq, .mrk *. 
+It manage many different of file format like *.bdf, .set/.fdt, .eph,.ep, .sef, .ris, .freq, .mrk, .eeg/vhdr *. 
 The purpose is to offer a complement to the free software Cartool developed by Denis Brunet (University of Geneva, reference:
 Brunet D., Murray M., Michel C. (2011) Spatiotemporal analysis of multichannel EEG: CARTOOL. Computational intelligence and neuroscience, vol. 2011, 813870. DOI : 10.1155/2011/813870).  
 It is also an alternative to the original EEGLAB GUI (reference: 
