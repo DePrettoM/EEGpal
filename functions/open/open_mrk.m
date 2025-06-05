@@ -63,8 +63,7 @@ for i=1:length(mrk)-1
         MRKname(i,1) = {sscanf(mrk{pointer},'%*d %*d %d',1)};
     else
         MRKstring = strcat((sscanf(mrk{pointer},'%*d %*d %s',1))');
-        MRKname(i,1) = {string(erase(MRKstring,'"'))};
-        %MRKname(i,1) = {strcat((sscanf(mrk{pointer},'%*d %*d %s',1))')};
+        MRKname(i,1) = {str2num(erase(MRKstring,'"'))};        
     end
     pointer = pointer + 1;
 end

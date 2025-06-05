@@ -22,9 +22,21 @@ sizeEventStruct=sizeEventStruct-length(tosupress);
 if sizeEventStruct>0 %if the file contains triggers
     
     % convert char event name to num event name
-    [origName,~,newNumName]=unique({EEG.event(:).type});
-    
-    
+    [origName,~,pos]=unique({EEG.event(:).type});
+    badName=256;
+    origName_Value=0;
+    newNumName=pos;
+    for k=1:size(origName,2) 
+        num = str2double(regexp(origName{k}, '\d+', 'match', 'once')); %extraction of number from a char
+        if ~isnan(num)
+            origName_Value(k)=num;
+        else
+            badName=badName+1; %in case of no number in the trigger char name
+            origName_Value(k)=badName;
+        end
+        newNumName(find(pos==k))=origName_Value(k);
+    end
+
     
     % Record a txt file with the correspondance between new and old marker
     [tempPath,tempName,~] = fileparts(openfilename);
@@ -34,7 +46,7 @@ if sizeEventStruct>0 %if the file contains triggers
     fprintf(FileID,'%s\r\n','The original event/trigger names have been changed. It was necessary to convert string names to numerical names.');
     fprintf(FileID,'\r\n%s\t%s\t%s\r\n','Original name','->' ,'New name');
     for j=1:size(origName,2)
-        fprintf(FileID,'%s\t%s\t%d\r\n',origName{1,j},'->',j);
+        fprintf(FileID,'%s\t%s\t%d\r\n',origName{1,j},'->',origName_Value(j));
     end
     fclose(FileID);
     
