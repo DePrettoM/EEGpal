@@ -2,6 +2,14 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 1.5: 
+- Rename the 'Done' button to 'Retain' to make it clearer to the user that the parameters are saved in memory but not executed.
+- Add the session parameters for the FileCut, PeaksExport and Statistics modules, and correct the behaviour when loading the session parameters for the Filtering and Frequency modules.
+- Interpolation module: Correct the Apply Session Parameter so that it does not load the interpolation matrix if the input files differ from the file saved in the interpolation matrix in the session parameters.
+- Suppress the ApplyStudyParameter and UpdateStudyParameters functions, as well as the StudyParameter public variable, in all modules.
+- Remove the open, save and save parameter file functions from all separate modules. Save parameters are now centralised in the main EEGpal window (Processing parameters option below the data table). Saving one processing parameters file will save the SessionParameters of all modules (after pressing the Retain button in each module).
+- Use the processing parameters to batch the different processing steps.
+- In the main EEGpal window, select the option in the left column to add an input parameter file and save only the file selection, not the processing parameters. Processing parameters do not save file selections (in order to be able to apply the same processing parameters to different file selections).
 
 Version 1.4 : 16.02.2025
 - Modification of the module 'FindPeaks' to a new module 'Peaks or Trace export' which permit in addition to the peaks detection/export to perform the export of a full portion of the signal (Trace export).
