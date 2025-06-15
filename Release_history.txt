@@ -10,6 +10,9 @@ Version 1.5:
 - Remove the open, save and save parameter file functions from all separate modules. Save parameters are now centralised in the main EEGpal window (Processing parameters option below the data table). Saving one processing parameters file will save the SessionParameters of all modules (after pressing the Retain button in each module).
 - Use the processing parameters to batch the different processing steps.
 - In the main EEGpal window, select the option in the left column to add an input parameter file and save only the file selection, not the processing parameters. Processing parameters do not save file selections (in order to be able to apply the same processing parameters to different file selections).
+- In the Filtering+ module: 
+	- Replace the CleanRawData All option Windows of eeglab by a Maltab app Windows. Allow the correct save of parameters and also to avoid incoherence between GUI and parameters used. 
+	- Change the way to call cleanLine
 
 Version 1.4 : 16.02.2025
 - Modification of the module 'FindPeaks' to a new module 'Peaks or Trace export' which permit in addition to the peaks detection/export to perform the export of a full portion of the signal (Trace export).
