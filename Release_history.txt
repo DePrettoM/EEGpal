@@ -3,7 +3,7 @@ MD=Michael DePretto
 MM=Michael Mouthon
 
 Version 1.5: 
-- Rename the 'Done' button to 'Retain' to make it clearer to the user that the parameters are saved in memory but not executed.
+- Rename the 'Done' button to 'Save in memory' to make it clearer to the user that the parameters are saved in memory but not executed.
 - Add the session parameters for the FileCut, PeaksExport and Statistics modules, and correct the behaviour when loading the session parameters for the Filtering and Frequency modules.
 - Interpolation module: Correct the Apply Session Parameter so that it does not load the interpolation matrix if the input files differ from the file saved in the interpolation matrix in the session parameters.
 - Suppress the ApplyStudyParameter and UpdateStudyParameters functions, as well as the StudyParameter public variable, in all modules.
