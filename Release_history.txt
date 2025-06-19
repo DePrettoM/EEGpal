@@ -13,6 +13,11 @@ Version 1.5:
 - In the Filtering+ module: 
 	- Replace the CleanRawData All option Windows of eeglab by a Maltab app Windows. Allow the correct save of parameters and also to avoid incoherence between GUI and parameters used. 
 	- Change the way to call cleanLine
+- In the Interpolation Module:
+	- prevent that activation of CleanRawData activation if the app.SessionParameters.Interpolation.CRD is empty
+	- For upload Table, .csv and .xlsx format are proposed at the same time and error message if invalide file
+	- For Spherical interpolation of eeglab, deactivation of manual entry of coordinate file by the user (loading by eeglab). This safety is useless because after check, 
+	the results is the same as if the coordinate file is loaded in Electrode module
 
 Version 1.4 : 16.02.2025
 - Modification of the module 'FindPeaks' to a new module 'Peaks or Trace export' which permit in addition to the peaks detection/export to perform the export of a full portion of the signal (Trace export).
