@@ -25,6 +25,8 @@ function [GMD] = compute_gmd(dataset1)
 % OUTPUTS
 % - 'GMD' 1D numeric array. As the map of each TF is compare to the
 % previous, the first value of GMD will be always 0 (as in Cartool)
+% GMD compute with the official formula given in the Electrical Neuroimaging text
+% book: Michel, C.M., Koenig, T., Brandeis, D., Gianotti, L. R., andWackermann, J. (2009). Electrical Neuroimaging. New York, NY: Cambridge University Press. (page 45)
 %%
 %
 % Original author of this script: pierre.megevand@medecine.unige.ch
