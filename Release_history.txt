@@ -2,7 +2,21 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
-Version 1.5: 
+Version 1.51: 09.07.2025 (MM)
+- In the ICA module:
+	- Change the conversion to .set  only at the start of the decomposition, rather than when the module window opens (to avoid the Windows freezing for a long time).
+	- Automatic load of bridged channels to the 'Bad channel' table if Bridge detection has been executed beforehand.
+	- Implement the SessionParameters variable to save selected parameters. The ApplySessionParameter function can handle if the file selection is different to the file names recorded in SessionParameters.
+	- Suppress the recomposition button, which saves the recomposed signal to a .set file. Recomposition is now complete when the user clicks the Run button, saving the output directly in the selected format.
+	- In the compounds inspection step, correct the bug that occurs when clicking on the number above the topographies. The EEGlab Windows with the Power Spectrum of the compound will now open correctly.
+	- The user can now choose how many compounds to display during inspection.
+	- Specify the threshold for ICAlabeling.
+	- The compounds selection window is automatically filled according to the specified threshold.
+	- Implement full automatic selection of bad compounds by ICA without visual inspection (according to the specified threshold).   
+- Add the present mode switch in the main EEGpal Windows to preset Cartool (default output format : .sef + fitering Matlab + Interpolation 3D spline) or eeglab (default output format: .set + filtering eeglab + interpolation eeglab spherical)
+
+Version 1.5: (MM)
+- The new layout of the main EEGpal window. The modules buttons have been reorganised into "Processing modules" and "Analysis modules" to make it clearer to users which order they have to be used in. The Export and File Cut buttons have also been grouped in the Tools section on the left.   
 - Rename the 'Done' button to 'Save in memory' to make it clearer to the user that the parameters are saved in memory but not executed.
 - Add the session parameters for the FileCut, PeaksExport and Statistics modules, and correct the behaviour when loading the session parameters for the Filtering and Frequency modules.
 - Interpolation module: Correct the Apply Session Parameter so that it does not load the interpolation matrix if the input files differ from the file saved in the interpolation matrix in the session parameters.
@@ -18,8 +32,10 @@ Version 1.5:
 	- For upload Table, .csv and .xlsx format are proposed at the same time and error message if invalide file
 	- For Spherical interpolation of eeglab, deactivation of manual entry of coordinate file by the user (loading by eeglab). This safety is useless because after check, 
 	the results is the same as if the coordinate file is loaded in Electrode module
+	- remove the button to perform the bridge detection and replace by a button to load the result file of ebridge check
+	- fill automatically the interpolation table with bridge channels detect by ebridge (when parameter are present in the SessionParameters file). 
 
-Version 1.4 : 16.02.2025
+Version 1.4 : 16.02.2025 (MM)
 - Modification of the module 'FindPeaks' to a new module 'Peaks or Trace export' which permit in addition to the peaks detection/export to perform the export of a full portion of the signal (Trace export).
 - Modification of the 'Frequencying' module.  Correction of Normalization option (specialy the add of the 'by global averages Power option'. In addition, add of the option to use eeglab newtimef function to perform the frequency analysis.
 - Modification of the 'Full Design' developpement to specify a factorial study design (the development was unfinish which is no more the case).
@@ -28,7 +44,7 @@ Version 1.4 : 16.02.2025
 - Finish to write manual/help files for every modules of EEGpal.
 - various small bugs corrections
 
-Version 1.3 : 26.09.2024
+Version 1.3 : 26.09.2024 (MM)
 - Improvement of ICA module. When it has to convert files in .set at the startup, add a progression bar. These temporary .set files are automatically delete after ICA decomposition because they are useless.
 - Correction of the title for the main windows as well as fileCut and ICA module. 
 - Modification of the script open_eph.m on line 81 in order that the loading of .ep file record the number of TF, number of channel in the header. The sampling rate still need to be enter manually after import. 
@@ -36,7 +52,7 @@ Version 1.3 : 26.09.2024
   The user has the possibility to record a check file informing if no peaks (=1) or several peaks (=2) have been detected in the time interval. In the case of multiple peaks, the main output file will by default only record the maximum of the minimum. 
   The second functionality of this module is to calculate the average of the signal in the specified time interval. This would be useful for extracting values to make plots.  
 
-Version 1.2 : 10.06.2024
+Version 1.2 : 10.06.2024 (MM)
 - correction from MichaelDP of the reading of .locs coordinate file with the EEGpalCS_mod_Electrodes module. 
 - in module Filtering +, adding the possibility to use the official eeglab script (pop_eegfiltnew) to compute the filtering
 The user can still use the Signal Processing Toolbox script from Mathworks (filtfilt) to perform the filtering (default parameter). 
@@ -47,7 +63,7 @@ The user can still use the Mike X Cohen script (interpolate_perrinX.m) which giv
 This option has been add because you might need to know if there is bridged channels before to run ICA. 
 - correction of open_sef and open_eph in order that the events are a numerical matrix and not a cell array. 
 
-Version 1.1 : 06.05.2024
+Version 1.1 : 06.05.2024 (MM)
 - Fusion of version of MD and MM
 - add of the ICA module
 - add of the FileCut module
