@@ -2,11 +2,43 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 1.52: 31.08.2025 (MM)
+- Change of layout in the EEGpal Main Windows with: 
+	- put 'Tools' at the buttons of the left column
+	- add a check box behind the RUN BATCH button to check if the batch mode is activated or not
+- In Bridge Detection module: 
+	- Don't ask to the user where to save the Excel file 'Bridge_detection.xlsx'. It will be automatically saved in the same folder as the input files
+- In Filtering+ module
+	- upgrade the eeglab toolbox cleanline to version 2.1
+	- add code for the Batch mnode: Activate the flag bad channel by default if the Filtering is in Batch mode
+- ICA module: 
+	- add code for Batch mode: 
+		- automatically add the bridged channel in batch mode
+		- for the full automatic processing, call the 'Automatic selection of bad compound'
+		- for the manual selection: modify the Run button to manage the continuation of the batch (required a manual restart in the main EEGpal Windows)
+- Interpolation module: 
+	- add code for Batch mode: 
+		- add bridged channel + flag bad channel from cleanRawData if the batch in running in full automatic
+		- for the manual selection: modify the Run button to manage the continuation of the batch (required a manual restart in the main EEGpal Windows)
+- Epoching module: 
+	- Desactivation of serveral options in ARTEFACT REJECTION tab (like the channels ignore, etc..). I have not tested it and it seems that it is a unfinish work from 	  MichaelDP. Keep only the rejection criteria
+	- modification of the AR evaluation in order to not generate marker file which visualize the position of good and bad Epochs. It was add by MichaelDP. It make to much 	  problem when you want to perform an classical Epoching after because in introduce string in the .mrk which is not well manage now. I suppress this functionality 	  because it was not usefull anyway.
+- BATCH parameters tool
+	- developpement of the tool/module. It will required that a parameter file is saved to work because he will look at the available parametered process
+	- permit to choose the sucession of the processing (look at the manuel for more details). 
+- RUN BATCH
+	- Implementation of the RUN BATCH button to batch serveral processing according to what is specified in BATCH parameters tool
+	- See the manual of the EEGpal Main Windows for the functionning
+	- process each step and can be put in pause in case of a manual intervention for ICA or interpolation. Press again on the button to restart from where you stoped and 	not from the begining 
+- Update all the modules manuals with the new layout of the Windows + proof-reading with DeepL AI
+
+
 Version 1.51: 09.07.2025 (MM)
 - In the ICA module:
 	- Change the conversion to .set  only at the start of the decomposition, rather than when the module window opens (to avoid the Windows freezing for a long time).
 	- Automatic load of bridged channels to the 'Bad channel' table if Bridge detection has been executed beforehand.
 	- Implement the SessionParameters variable to save selected parameters. The ApplySessionParameter function can handle if the file selection is different to the file names recorded in SessionParameters.
+	- Supress the selection of the channel.loc file at the start of the decomposition. Automatically manage with the coordinate file load in the Electrode Settings
 	- Suppress the recomposition button, which saves the recomposed signal to a .set file. Recomposition is now complete when the user clicks the Run button, saving the output directly in the selected format.
 	- In the compounds inspection step, correct the bug that occurs when clicking on the number above the topographies. The EEGlab Windows with the Power Spectrum of the compound will now open correctly.
 	- The user can now choose how many compounds to display during inspection.
