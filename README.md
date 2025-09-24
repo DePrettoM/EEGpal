@@ -42,15 +42,15 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 ## Dependencies
 | PLUGINS | Description |
 | ------ | ------ |
-| [EEGLAB v2023.1](https://github.com/sccn/eeglab) | Use in sveral places. Look at help to know more when it is used. |
+| [EEGLAB v2025.1](https://github.com/sccn/eeglab) | Use in sveral places. Look at help to know more when it is used. |
 | [Signal processing toolbox]() | Use of the function filtfilt for filtering EEG data. | 
 | [Statistics and Machine Learning Toolbox ]() | Use by the Statistics module. | 
 
 
 | EEGLAB EXTENSIONS | Description |
 | ------ | ------ |
-| [clean_rawdata v2.91]| Cleans raw EEG data. Contains ASR. |
-| [Cleanline v2.00]| Removes sinusoidal artifacts (line noise). |
+| [clean_rawdata v2.100]| Cleans raw EEG data. Contains ASR. |
+| [Cleanline v2.1]| Removes sinusoidal artifacts (line noise). |
 | [ICLabel v1.6]| Seven-category IC classifier using a neural network trained. |
 | [firflit v2.8]| Routines for filtering data. |
 
@@ -65,8 +65,8 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 ## Authors
 [**Michael De Pretto**](https://orcid.org/0000-0003-4176-4798)\
 *Scientific collaborator*\
-*Michael.DePretto@unige.ch*\
-*[Equipe de NeuroPsychoLinguistique](https://www.unige.ch/fapse/psycholinguistique/equipes/npl/membres/michael-de-pretto)*\
+*Michael.DePretto@unil.ch*\
+*[Institut universitaire de formation et de recherche en soins](https://www.unil.ch/fbm/fr/home/menuinst/faculte/organisation/iufrs/contact.html*\
 *University of Geneva, Switzerland*
 
 [**Michael Mouthon**](https://orcid.org/0000-0002-2557-4102)\

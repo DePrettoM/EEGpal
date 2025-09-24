@@ -2,6 +2,14 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 2.0: 27.09.2025 (MM)
+- Upgrade eeglab from version 2023.1 to 2025.0
+- Upgrade the eeglab toolbox clean_rawdata from v2.91 to version 2.100
+- Upgrade the eeglab toolbox ICALabel from v1.6 to version 1.7 
+- Validation of EEGpal processing with the following dataset: ERP CORE (https://osf.io/pfde9/) with 40 participants presented with faces or cars using a 32-channel setup.
+The results obtained by EEGpal2 are similar to those shared by the database's authors. Additionally, the results of EEGpal2 are identical in manual and automatic batch modes.
+Moreover, these results are similar to those obtained with the previous version of EEGpal (1.4). Finally, the results obtained using the Cartool and EEGlab interfaces are also comparable.
+
 Version 1.52: 31.08.2025 (MM)
 - Change of layout in the EEGpal Main Windows with: 
 	- put 'Tools' at the buttons of the left column
@@ -109,3 +117,15 @@ Version 1.1 : 06.05.2024 (MM)
 
 Version tested and validate by MM the 06.05.2024.
 Small bugs remining: open_eeglab can not manager event name in text (but only numbers).
+
+Version 1.0 : 2023 (MD)
+- creation of the EEGpal_Main_window module
+- creation of the Filtering+ module
+- creation of the Interpolation module
+- creation of the Re-reference module
+- creation of Epoching module
+- creation of Frequencying module 
+- creation of the Electrode Setting tool
+- creation/modification of scripts to manage .bdf, .ep/eph, .sef, ,ris, .freq file format
+- creation of the original structure of EEGpal toolbox
+Note: original version was validated with Cartool processing
