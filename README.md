@@ -14,7 +14,7 @@ It includes tools to :
 - cut EEG files
 - Export to another format 
 
-It manage many different of file format like *.bdf, .set/.fdt, .eph,.ep, .sef, .ris, .freq, .mrk, .eeg/vhdr *. 
+It manage many different of file format like *.bdf, .set/.fdt, .eph,.ep, .sef, .ris, .freq, .mrk, .eeg/vhdr  
 The purpose is to offer a complement to the free software Cartool developed by Denis Brunet (University of Geneva, reference:
 Brunet D., Murray M., Michel C. (2011) Spatiotemporal analysis of multichannel EEG: CARTOOL. Computational intelligence and neuroscience, vol. 2011, 813870. DOI : 10.1155/2011/813870).  
 It is also an alternative to the original EEGLAB GUI (reference: 
@@ -42,7 +42,7 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 ## Dependencies
 | PLUGINS | Description |
 | ------ | ------ |
-| [EEGLAB v2025.1](https://github.com/sccn/eeglab) | Use in sveral places. Look at help to know more when it is used. |
+| [EEGLAB v2025.0](https://github.com/sccn/eeglab) | Use in sveral places. Look at help to know more when it is used. |
 | [Signal processing toolbox]() | Use of the function filtfilt for filtering EEG data. | 
 | [Statistics and Machine Learning Toolbox ]() | Use by the Statistics module. | 
 
@@ -51,7 +51,7 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 | ------ | ------ |
 | [clean_rawdata v2.100]| Cleans raw EEG data. Contains ASR. |
 | [Cleanline v2.1]| Removes sinusoidal artifacts (line noise). |
-| [ICLabel v1.6]| Seven-category IC classifier using a neural network trained. |
+| [ICLabel v1.7]| Seven-category IC classifier using a neural network trained. |
 | [firflit v2.8]| Routines for filtering data. |
 
 
