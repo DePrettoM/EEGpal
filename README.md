@@ -1,20 +1,20 @@
 # EEGpal
-EEGpal is an open-source Matlab-based software for automated/semi-automated EEG data pre-processing and analyses.
+EEGpal is open-source, Matlab-based software designed for the automated or semi-automated pre-processing and analysis of EEG data.
 It proposes Graphical User Interfaces (GUIs) that allow EEG pre-processing to be batched across participants with a high degree of flexibility in processing parameters. 
 It includes tools to :
-- filter data
-- detect channel bridges 
+- detect channel bridges
+- filter data 
 - performed independant component decomposition/recomposition ICA
 - interpolate 
 - re-referencing
 - epoching
 - frequency analysis
-- Peaks or Trace Export
-- Statistics on tracks
+- peaks or trace export
+- statistics on tracks
 - cut EEG files
-- Export to another format 
+- export to another format 
 
-It manage many different of file format like *.bdf, .set/.fdt, .eph,.ep, .sef, .ris, .freq, .mrk, .eeg/vhdr  
+It suppotrs many different of file formats, such as: *.bdf, .set/.fdt, .eph,.ep, .sef, .ris, .freq, .mrk, .eeg/vhdr  
 The purpose is to offer a complement to the free software Cartool developed by Denis Brunet (University of Geneva, reference:
 Brunet D., Murray M., Michel C. (2011) Spatiotemporal analysis of multichannel EEG: CARTOOL. Computational intelligence and neuroscience, vol. 2011, 813870. DOI : 10.1155/2011/813870).  
 It is also an alternative to the original EEGLAB GUI (reference: 
@@ -28,7 +28,7 @@ Tested on Windows and Mac. Should work on Linux but not tested.
 
 ## How to install and run
 1. Download the EEGpal repository on your local drive.
-2. If you have an eeglab version already mapped in your Matlab path, remove it (because it could generate conflict with the eeglab version include inside of EEGpal).
+2. If you already have an EEGlab version mapped in your Matlab path, remove it, as it could cause a conflict with the EEGlab version included in EEGpal.
 3. Add this folder to your local Matlab path (use of the command *setpath('path of the EEGpal folder')*.
 4. Use the command *EEGpal* to start the software.
 
@@ -37,7 +37,7 @@ Tested on Windows and Mac. Should work on Linux but not tested.
 Otherwise you will find written tutorial files in the folder */Manuels* of this repository.
 
 ## Cite the repository
-De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/DePrettoM/EEGpal \
+De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/DePrettoM/EEGpal
 
 ## Dependencies
 | PLUGINS | Description |
@@ -66,13 +66,13 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 [**Michael De Pretto**](https://orcid.org/0000-0003-4176-4798)\
 *Scientific collaborator*\
 *Michael.DePretto@unil.ch*\
-*[Institut universitaire de formation et de recherche en soins](https://www.unil.ch/fbm/fr/home/menuinst/faculte/organisation/iufrs/contact.html*\
-*University of Geneva, Switzerland*
+*[Institut universitaire de formation et de recherche en soins](https://www.unil.ch/fbm/fr/home/menuinst/faculte/organisation/iufrs/contact.html\
+*University of Lausanne, Switzerland*
 
 [**Michael Mouthon**](https://orcid.org/0000-0002-2557-4102)\
 *Laboratory Engineer*\
 *michael.mouthon@unifr.ch*\
-*[FNDlab](https://www.unifr.ch/directory/fr/people/3229/6a825)*\
+*[FNDlab](https://www.unifr.ch/directory/fr/people/3229/6a825)\
 *University of Fribourg, Switzerland*
 
 ## License
