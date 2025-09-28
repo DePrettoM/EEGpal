@@ -2,8 +2,80 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 2.0: 28.09.2025 (MM)
+- Upgrade eeglab from version 2023.1 to 2025.0
+- Upgrade the eeglab toolbox clean_rawdata from v2.91 to version 2.100
+- Upgrade the eeglab toolbox ICALabel from v1.6 to version 1.7 
+- Validation of EEGpal processing with the following dataset: ERP CORE (https://osf.io/pfde9/) with 40 participants presented with faces or cars using a 32-channel setup.
+The results obtained by EEGpal2 are similar to those shared by the database's authors. Additionally, the results of EEGpal2 are identical in manual and automatic batch modes.
+Moreover, these results are similar to those obtained with the previous version of EEGpal (1.4). Finally, the results obtained using the Cartool and EEGlab interfaces are also comparable.
 
-Version 1.4 : 16.02.2025
+Version 1.52: 31.08.2025 (MM)
+- Change of layout in the EEGpal Main Windows with: 
+	- put 'Tools' at the buttons of the left column
+	- add a check box behind the RUN BATCH button to check if the batch mode is activated or not
+- In Bridge Detection module: 
+	- Don't ask to the user where to save the Excel file 'Bridge_detection.xlsx'. It will be automatically saved in the same folder as the input files
+- In Filtering+ module
+	- upgrade the eeglab toolbox cleanline to version 2.1
+	- add code for the Batch mnode: Activate the flag bad channel by default if the Filtering is in Batch mode
+- ICA module: 
+	- add code for Batch mode: 
+		- automatically add the bridged channel in batch mode
+		- for the full automatic processing, call the 'Automatic selection of bad compound'
+		- for the manual selection: modify the Run button to manage the continuation of the batch (required a manual restart in the main EEGpal Windows)
+- Interpolation module: 
+	- add code for Batch mode: 
+		- add bridged channel + flag bad channel from cleanRawData if the batch in running in full automatic
+		- for the manual selection: modify the Run button to manage the continuation of the batch (required a manual restart in the main EEGpal Windows)
+- Epoching module: 
+	- Desactivation of serveral options in ARTEFACT REJECTION tab (like the channels ignore, etc..). I have not tested it and it seems that it is a unfinish work from 	  MichaelDP. Keep only the rejection criteria
+	- modification of the AR evaluation in order to not generate marker file which visualize the position of good and bad Epochs. It was add by MichaelDP. It make to much 	  problem when you want to perform an classical Epoching after because in introduce string in the .mrk which is not well manage now. I suppress this functionality 	  because it was not usefull anyway.
+- BATCH parameters tool
+	- developpement of the tool/module. It will required that a parameter file is saved to work because he will look at the available parametered process
+	- permit to choose the sucession of the processing (look at the manuel for more details). 
+- RUN BATCH
+	- Implementation of the RUN BATCH button to batch serveral processing according to what is specified in BATCH parameters tool
+	- See the manual of the EEGpal Main Windows for the functionning
+	- process each step and can be put in pause in case of a manual intervention for ICA or interpolation. Press again on the button to restart from where you stoped and 	not from the begining 
+- Update all the modules manuals with the new layout of the Windows + proof-reading with DeepL AI
+
+
+Version 1.51: 09.07.2025 (MM)
+- In the ICA module:
+	- Change the conversion to .set  only at the start of the decomposition, rather than when the module window opens (to avoid the Windows freezing for a long time).
+	- Automatic load of bridged channels to the 'Bad channel' table if Bridge detection has been executed beforehand.
+	- Implement the SessionParameters variable to save selected parameters. The ApplySessionParameter function can handle if the file selection is different to the file names recorded in SessionParameters.
+	- Supress the selection of the channel.loc file at the start of the decomposition. Automatically manage with the coordinate file load in the Electrode Settings
+	- Suppress the recomposition button, which saves the recomposed signal to a .set file. Recomposition is now complete when the user clicks the Run button, saving the output directly in the selected format.
+	- In the compounds inspection step, correct the bug that occurs when clicking on the number above the topographies. The EEGlab Windows with the Power Spectrum of the compound will now open correctly.
+	- The user can now choose how many compounds to display during inspection.
+	- Specify the threshold for ICAlabeling.
+	- The compounds selection window is automatically filled according to the specified threshold.
+	- Implement full automatic selection of bad compounds by ICA without visual inspection (according to the specified threshold).   
+- Add the present mode switch in the main EEGpal Windows to preset Cartool (default output format : .sef + fitering Matlab + Interpolation 3D spline) or eeglab (default output format: .set + filtering eeglab + interpolation eeglab spherical)
+
+Version 1.5: (MM)
+- The new layout of the main EEGpal window. The modules buttons have been reorganised into "Processing modules" and "Analysis modules" to make it clearer to users which order they have to be used in. The Export and File Cut buttons have also been grouped in the Tools section on the left.   
+- Rename the 'Done' button to 'Save in memory' to make it clearer to the user that the parameters are saved in memory but not executed.
+- Add the session parameters for the FileCut, PeaksExport and Statistics modules, and correct the behaviour when loading the session parameters for the Filtering and Frequency modules.
+- Interpolation module: Correct the Apply Session Parameter so that it does not load the interpolation matrix if the input files differ from the file saved in the interpolation matrix in the session parameters.
+- Suppress the ApplyStudyParameter and UpdateStudyParameters functions, as well as the StudyParameter public variable, in all modules.
+- Remove the open, save and save parameter file functions from all separate modules. Save parameters are now centralised in the main EEGpal window (Processing parameters option below the data table). Saving one processing parameters file will save the SessionParameters of all modules (after pressing the Retain button in each module).
+- Use the processing parameters to batch the different processing steps.
+- In the main EEGpal window, select the option in the left column to add an input parameter file and save only the file selection, not the processing parameters. Processing parameters do not save file selections (in order to be able to apply the same processing parameters to different file selections).
+- In the Filtering+ module: 
+	- Replace the CleanRawData All option Windows of eeglab by a Maltab app Windows. Allow the correct save of parameters and also to avoid incoherence between GUI and parameters used. 
+	- Change the way to call cleanLine
+- In the Interpolation Module:
+	- prevent that activation of CleanRawData activation if the app.SessionParameters.Interpolation.CRD is empty
+	- For upload Table, .csv and .xlsx format are proposed at the same time and error message if invalide file
+	- For Spherical interpolation of eeglab, deactivation of manual entry of coordinate file by the user (loading by eeglab). This safety is useless because after check, 
+	the results is the same as if the coordinate file is loaded in Electrode module
+	- remove the button to perform the bridge detection and replace by a button to load the result file of ebridge check
+	- fill automatically the interpolation table with bridge channels detect by ebridge (when parameter are present in the SessionParameters file). 
+
+Version 1.4 : 16.02.2025 (MM)
 - Modification of the module 'FindPeaks' to a new module 'Peaks or Trace export' which permit in addition to the peaks detection/export to perform the export of a full portion of the signal (Trace export).
 - Modification of the 'Frequencying' module.  Correction of Normalization option (specialy the add of the 'by global averages Power option'. In addition, add of the option to use eeglab newtimef function to perform the frequency analysis.
 - Modification of the 'Full Design' developpement to specify a factorial study design (the development was unfinish which is no more the case).
@@ -12,7 +84,7 @@ Version 1.4 : 16.02.2025
 - Finish to write manual/help files for every modules of EEGpal.
 - various small bugs corrections
 
-Version 1.3 : 26.09.2024
+Version 1.3 : 26.09.2024 (MM)
 - Improvement of ICA module. When it has to convert files in .set at the startup, add a progression bar. These temporary .set files are automatically delete after ICA decomposition because they are useless.
 - Correction of the title for the main windows as well as fileCut and ICA module. 
 - Modification of the script open_eph.m on line 81 in order that the loading of .ep file record the number of TF, number of channel in the header. The sampling rate still need to be enter manually after import. 
@@ -20,7 +92,7 @@ Version 1.3 : 26.09.2024
   The user has the possibility to record a check file informing if no peaks (=1) or several peaks (=2) have been detected in the time interval. In the case of multiple peaks, the main output file will by default only record the maximum of the minimum. 
   The second functionality of this module is to calculate the average of the signal in the specified time interval. This would be useful for extracting values to make plots.  
 
-Version 1.2 : 10.06.2024
+Version 1.2 : 10.06.2024 (MM, MD)
 - correction from MichaelDP of the reading of .locs coordinate file with the EEGpalCS_mod_Electrodes module. 
 - in module Filtering +, adding the possibility to use the official eeglab script (pop_eegfiltnew) to compute the filtering
 The user can still use the Signal Processing Toolbox script from Mathworks (filtfilt) to perform the filtering (default parameter). 
@@ -31,7 +103,7 @@ The user can still use the Mike X Cohen script (interpolate_perrinX.m) which giv
 This option has been add because you might need to know if there is bridged channels before to run ICA. 
 - correction of open_sef and open_eph in order that the events are a numerical matrix and not a cell array. 
 
-Version 1.1 : 06.05.2024
+Version 1.1 : 06.05.2024 (MM)
 - Fusion of version of MD and MM
 - add of the ICA module
 - add of the FileCut module
@@ -45,3 +117,16 @@ Version 1.1 : 06.05.2024
 
 Version tested and validate by MM the 06.05.2024.
 Small bugs remining: open_eeglab can not manager event name in text (but only numbers).
+
+Version 1.0 : 2023 (MD)
+Developpement of the original version with:
+- creation of the EEGpal_Main_window module
+- creation of the Filtering+ module
+- creation of the Interpolation module
+- creation of the Re-reference module
+- creation of Epoching module
+- creation of Frequencying module 
+- creation of the Electrode Setting tool
+- creation/modification of scripts to manage .bdf, .ep/eph, .sef, ,ris, .freq file format
+- creation of the original structure of EEGpal toolbox
+Note: original version was validated with Cartool processing

@@ -100,6 +100,19 @@ if nargout > 2 && ~isempty(SETfile.event)
             events(k,2)=SETfile.event(k).latency+SETfile.event(k).duration;
             events(k,3)=SETfile.event(k).type;
         end
+    elseif isfield(SETfile.event,'type') & ~isfield(SETfile.event,'duration')
+        NbEvents=size(SETfile.event,2); %number of Event
+        header.firstindex = 1; % In EEGlab, 1st time-frame is 1
+        events=zeros(NbEvents,3);
+        if ischar(SETfile.event(1).type) %test if the event are text
+            errordlg('Unfortunately, this function can not handle text in the event', 'text in event')
+            return
+        end
+        for k=1:NbEvents
+            events(k,1)=SETfile.event(k).latency;
+            events(k,2)=SETfile.event(k).latency;
+            events(k,3)=SETfile.event(k).type;
+        end
     else
         [~,NbEvents]=size(SETfile.event); 
         header.firstindex = 1; % In EEGlab, 1st time-frame is 1
