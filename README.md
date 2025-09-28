@@ -62,7 +62,7 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 | [fdr_bh.m] (https://www.mathworks.com/matlabcentral/fileexchange/27418-fdr_bh) |  Executes the Benjamini & Hochberg (1995) procedure for controlling the false discovery rate (FDR) of a family of hypothesis tests (version 2.3.0). Develop by David Groppe |
 
   
- The dependencies are already included in this repository (except for the Signal processing toolbox and Statistics and Machine Learning Toolbox which are a comercial product of MathWorks).
+ The dependencies are already included in this repository (except for the Signal processing toolbox and Statistics and Machine Learning Toolbox which are comercial products of MathWorks).
  EEGpal can be used without the Matlab commercial Signal processing toolbox if you use the EEGLAB alternative for filtering.
  However, the Statistics module cannot be used without the Statistics and Machine Learning Toolbox.   
  
