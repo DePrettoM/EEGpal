@@ -2,7 +2,7 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
-Version 2.0: 27.09.2025 (MM)
+Version 2.0: 28.09.2025 (MM)
 - Upgrade eeglab from version 2023.1 to 2025.0
 - Upgrade the eeglab toolbox clean_rawdata from v2.91 to version 2.100
 - Upgrade the eeglab toolbox ICALabel from v1.6 to version 1.7 
@@ -92,7 +92,7 @@ Version 1.3 : 26.09.2024 (MM)
   The user has the possibility to record a check file informing if no peaks (=1) or several peaks (=2) have been detected in the time interval. In the case of multiple peaks, the main output file will by default only record the maximum of the minimum. 
   The second functionality of this module is to calculate the average of the signal in the specified time interval. This would be useful for extracting values to make plots.  
 
-Version 1.2 : 10.06.2024 (MM)
+Version 1.2 : 10.06.2024 (MM, MD)
 - correction from MichaelDP of the reading of .locs coordinate file with the EEGpalCS_mod_Electrodes module. 
 - in module Filtering +, adding the possibility to use the official eeglab script (pop_eegfiltnew) to compute the filtering
 The user can still use the Signal Processing Toolbox script from Mathworks (filtfilt) to perform the filtering (default parameter). 
@@ -119,6 +119,7 @@ Version tested and validate by MM the 06.05.2024.
 Small bugs remining: open_eeglab can not manager event name in text (but only numbers).
 
 Version 1.0 : 2023 (MD)
+Developpement of the original version with:
 - creation of the EEGpal_Main_window module
 - creation of the Filtering+ module
 - creation of the Interpolation module

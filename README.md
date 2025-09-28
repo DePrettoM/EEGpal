@@ -28,7 +28,7 @@ Tested on Windows and Mac. Should work on Linux but not tested.
 
 ## How to install and run
 1. Download the EEGpal repository on your local drive.
-2. If you already have an EEGlab version mapped in your Matlab path, remove it, as it could cause a conflict with the EEGlab version included in EEGpal.
+2. If you already have an EEGLAB version mapped in your Matlab path, remove it, as it could cause a conflict with the EEGLAB version included in EEGpal.
 3. Add this folder to your local Matlab path (use of the command *setpath('path of the EEGpal folder')*.
 4. Use the command *EEGpal* to start the software.
 
@@ -43,8 +43,8 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 | PLUGINS | Description |
 | ------ | ------ |
 | [EEGLAB v2025.0](https://github.com/sccn/eeglab) | Use in sveral places. Look at help to know more when it is used. |
-| [Signal processing toolbox]() | Use of the function filtfilt for filtering EEG data. | 
-| [Statistics and Machine Learning Toolbox ]() | Use by the Statistics module. | 
+| [Signal processing toolbox]() | Use of the function filtfilt for filtering EEG data (facultative). | 
+| [Statistics and Machine Learning Toolbox ]() | Use by the Statistics module (facultative). | 
 
 
 | EEGLAB EXTENSIONS | Description |
@@ -59,14 +59,18 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 | ------ | ------ |
 | [eBridge.m v0.1.01] (https://psychophysiology.cpmc.columbia.edu/software/eBridge/index.html)| Identify channels within an EEG montage forming a low-impedance |
 | [interpolate_perrinX] (https://github.com/mikexcohen/AnalyzingNeuralTimeSeries) |  interpolate electrodes using a 3D Spline method. Develop by Mike X Cohen |
+| [fdr_bh.m] (https://www.mathworks.com/matlabcentral/fileexchange/27418-fdr_bh) |  Executes the Benjamini & Hochberg (1995) procedure for controlling the false discovery rate (FDR) of a family of hypothesis tests (version 2.3.0). Develop by David Groppe |
 
- The dependencies are already included in this repository (except for the Signal processing toolbox which is a comercial product of MathWorks).
+  
+ The dependencies are already included in this repository (except for the Signal processing toolbox and Statistics and Machine Learning Toolbox which are a comercial product of MathWorks).
+ EEGpal can be used without the Matlab commercial Signal processing toolbox if you use the EEGLAB alternative for filtering.
+ However, the Statistics module cannot be used without the Statistics and Machine Learning Toolbox.   
  
 ## Authors
 [**Michael De Pretto**](https://orcid.org/0000-0003-4176-4798)\
 *Scientific collaborator*\
 *Michael.DePretto@unil.ch*\
-*[Institut universitaire de formation et de recherche en soins](https://www.unil.ch/fbm/fr/home/menuinst/faculte/organisation/iufrs/contact.html\
+*[Institut universitaire de formation et de recherche en soins](https://www.unil.ch/fbm/fr/home/menuinst/faculte/organisation/iufrs/contact.html)\
 *University of Lausanne, Switzerland*
 
 [**Michael Mouthon**](https://orcid.org/0000-0002-2557-4102)\
