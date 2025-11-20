@@ -2,6 +2,19 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Verson 2.01: 20.11.205 (MM)
+- Modify the Epoching module:
+	- to record the 'Move events' value (correction of event timing) in the PIF.
+	- add a wait bar durng the processing of AR tool
+- correction of a batch bug in ICA module
+	- Put  status of 2 instead of 1 in app.Parameter to prevent the batch to continue before that the user perform the visual inspection
+	- change of applySessionParameter to take account that the number of file could be different between the save et the current intput. 
+- correction Peak and Export module: Remove GMD text to have only Dis (dissimlarity).  
+- correction Statistics module: Remove GMD text to have only Dis (dissimlarity). 
+- modify the manual of Frequencying to add a question to the FAQ
+- update manuals and README.md file with the links to tutorial videos on YouTube
+- upddate the version number to all module to be 2.0 
+
 Version 2.0: 28.09.2025 (MM)
 - Upgrade eeglab from version 2023.1 to 2025.0
 - Upgrade the eeglab toolbox clean_rawdata from v2.91 to version 2.100
