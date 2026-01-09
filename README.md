@@ -5,6 +5,7 @@ It includes tools to :
 - detect channel bridges
 - filter data 
 - performed independant component decomposition/recomposition ICA
+- denoising with GEDAI toolbox
 - interpolate 
 - re-referencing
 - epoching
@@ -54,6 +55,7 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 | [Cleanline v2.1]| Removes sinusoidal artifacts (line noise). |
 | [ICLabel v1.7]| Seven-category IC classifier using a neural network trained. |
 | [firflit v2.8]| Routines for filtering data. |
+| [GEDAI denoising plugin v1.3]| Generalized Eigenvalue De-Artifacting Instrument. |
 
 
 | ISOLATED FUNCTIONS | Desciption |

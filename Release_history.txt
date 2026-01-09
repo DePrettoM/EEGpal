@@ -2,6 +2,15 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 2.1: 04.01.2026 (MM)
+- Add the module GEDAI:
+	- For artefact correction, add the new GEDAI toolbox (Generalized Eigenvalue De-Artifacting Instrument) to the eeglab instance, developped by Thomas Ros from the CIBM,  version 1.3
+	- Creation of a module interface for EEGpal
+	- Management of the triggers/events position changes when rejection of bad epochs
+	- Write a user manual
+- Correction of tooltips: There was some mistakes in the tooltips across EEGpal modules which have been corrected
+- Add EEGpal logo to the main window
+
 Verson 2.01: 20.11.205 (MM)
 - Modify the Epoching module:
 	- to record the 'Move events' value (correction of event timing) in the PIF.
