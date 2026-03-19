@@ -2,6 +2,12 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 2.11: 19.03.2026(MM)
+- Correction in the frequencying module
+	- There was a mistake specifically when using the eeglab frequency analysis. The file size and number of windows where not adapted correctely when serval files. Now it is corrected.
+
+
+
 Version 2.1: 04.01.2026 (MM)
 - Add the module GEDAI:
 	- For artefact correction, add the new GEDAI toolbox (Generalized Eigenvalue De-Artifacting Instrument) to the eeglab instance, developped by Thomas Ros from the CIBM,  version 1.3
