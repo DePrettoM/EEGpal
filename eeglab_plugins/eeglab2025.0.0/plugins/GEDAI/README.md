@@ -1,4 +1,4 @@
-## GEDAI denoising plugin for EEGLAB
+## GEDAI denoising plugin for Matlab (EEGLAB/Brainstorm/FieldTrip toolboxes)
 
 
 <img width="300" height="270" alt="GEDAI-CIBM_logo" src="https://github.com/user-attachments/assets/bc1775f6-c3c7-4273-a2ac-6ac855653039" />

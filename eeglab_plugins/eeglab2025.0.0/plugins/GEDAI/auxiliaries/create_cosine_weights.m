@@ -33,18 +33,27 @@ function [weights] = create_cosine_weights(channels, srate, epoch_size, fullshif
 cosine_weights=zeros(channels,srate*epoch_size);
 
     %creating the weights (depending on odd or even)
-    if(fullshift) %even
-        for e=1:channels %for each electrode
-            for u=1:srate*epoch_size %for each sample in the epoch
-                cosine_weights(e,u) = 0.5-0.5*cos(2*u*pi/(srate*epoch_size));
-            end
-        end
-    else %odd
-        for e=1:channels
-            for u=1:srate*epoch_size-1
-                cosine_weights(e,u) = 0.5-0.5*cos(2*u*pi/(srate*epoch_size-1));
-            end
-        end
+    % Creating the weights (vectorized)
+    target_samples = srate * epoch_size;
+    samples = target_samples;
+    if ~fullshift 
+       samples = samples - 1; 
+    end
+    
+    % Generate cosine window for one channel
+    u = 1:samples;
+    if fullshift
+        cos_window = 0.5 - 0.5 * cos(2 * u * pi / (srate * epoch_size));
+    else
+        cos_window = 0.5 - 0.5 * cos(2 * u * pi / (srate * epoch_size - 1));
+    end
+    
+    % Replicate for all channels
+    cosine_weights = repmat(cos_window, channels, 1);
+    
+    % Pad with zeros if necessary (original behavior for fullshift=false)
+    if size(cosine_weights, 2) < target_samples
+        cosine_weights(:, end+1:target_samples) = 0;
     end
     weights = cosine_weights;
 end

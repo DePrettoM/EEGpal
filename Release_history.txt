@@ -2,11 +2,12 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 2.12: 24.03.2026(MM)
+- upgrade of GEDAI toolbox to the version 1.5 (downloaded the 24.03.2026 on GitHub, commit 155).
+
 Version 2.11: 19.03.2026(MM)
 - Correction in the frequencying module
 	- There was a mistake specifically when using the eeglab frequency analysis. The file size and number of windows where not adapted correctely when serval files. Now it is corrected.
-
-
 
 Version 2.1: 04.01.2026 (MM)
 - Add the module GEDAI:

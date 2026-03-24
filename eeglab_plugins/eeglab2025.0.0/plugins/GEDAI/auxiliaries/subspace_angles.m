@@ -12,7 +12,7 @@
 %                in radians, sorted in non-decreasing order.
 
 
-function angles_rad = subspace_angles(A, B)
+function [cos_theta] = subspace_angles(A, B)
 
 % Ensure inputs are double for numerical precision in SVD and acos.
 % `eig` outputs are typically double, but explicit casting is safer.
@@ -34,14 +34,17 @@ cos_theta = diag(S);
 
 % Due to floating-point arithmetic, cos_theta might be slightly outside
 % the valid range of [-1, 1] for acos. Clip values to prevent complex outputs.
-cos_theta(cos_theta > 1) = 1;
-cos_theta(cos_theta < -1) = -1;
+% cos_theta(cos_theta > 1) = 1;
+% cos_theta(cos_theta < -1) = -1;
 
 % Calculate the principal angles using arccosine.
-angles_rad = acos(cos_theta);
+% angles_rad = acos(cos_theta);
 
 % Sort the angles in non-decreasing (ascending) order,
 % as is standard for principal angles (and typically done by subspacea).
-angles_rad = sort(angles_rad);
+% [angles_rad, sort_idx] = sort(angles_rad);
+
+% Sort cos_theta to correspond to the sorted angles (descending cosine values)
+% cos_theta = cos_theta(sort_idx);
 
 end
