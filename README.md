@@ -51,11 +51,11 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 
 | EEGLAB EXTENSIONS | Description |
 | ------ | ------ |
-| [clean_rawdata v2.100]| Cleans raw EEG data. Contains ASR. |
+| [clean_rawdata v2.11]| Cleans raw EEG data. Contains ASR. |
 | [Cleanline v2.1]| Removes sinusoidal artifacts (line noise). |
 | [ICLabel v1.7]| Seven-category IC classifier using a neural network trained. |
 | [firflit v2.8]| Routines for filtering data. |
-| [GEDAI denoising plugin v1.3]| Generalized Eigenvalue De-Artifacting Instrument. |
+| [GEDAI denoising plugin v1.5]| Generalized Eigenvalue De-Artifacting Instrument. |
 
 
 | ISOLATED FUNCTIONS | Desciption |
