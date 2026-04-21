@@ -2,6 +2,14 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 2.13: 21.04.2026 (MM)
+- Update for the Epoching module with
+	- correct a bug for the averaging Between All triggers
+	- optimisation of averaging code for the Within All triggers (now the file is saved only after the subject loop instead of saving the file for each trigger)
+	- Add the possibility to generate the Standard Deviation file (SD) and Standard Error file (SE) saved with the Cartool name convension. 
+	- hide the averging per condition and factor button (not implemented)
+	- update the Epoching manual
+
 Version 2.12: 24.03.2026(MM)
 - upgrade of GEDAI toolbox to the version 1.5 (downloaded the 24.03.2026 on GitHub, commit 155).
 
