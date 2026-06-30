@@ -44,12 +44,12 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 ## Dependencies
 | PLUGINS | Description |
 | ------ | ------ |
-| [EEGLAB v2025.0](https://github.com/sccn/eeglab) | Use in sveral places. Look at help to know more when it is used. |
-| [Signal processing toolbox]() | Use of the function filtfilt for filtering EEG data (facultative). | 
-| [Statistics and Machine Learning Toolbox ]() | Use by the Statistics module (facultative). | 
+| [EEGLAB v2025.0](https://github.com/sccn/eeglab) | Included in the eeglab_plugins of this repository. Use in sveral places. Look at help to know more when it is used. |
+| [Signal processing toolbox]() | Not included but Facultative. Use of the function filtfilt for filtering EEG data (alternative is to use EEGLAB function). | 
+| [Statistics and Machine Learning Toolbox ]() | Not included. It is mandatory only if you use by the Statistics module. | 
 
 
-| EEGLAB EXTENSIONS | Description |
+| EEGLAB EXTENSIONS | Description | Already included in the eeglab_plugins repository
 | ------ | ------ |
 | [clean_rawdata v2.11]| Cleans raw EEG data. Contains ASR. |
 | [Cleanline v2.1]| Removes sinusoidal artifacts (line noise). |
@@ -84,3 +84,10 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+<p>
+This toolbox includes components from <a href="https://sccn.ucsd.edu/eeglab/" target="_blank">EEGLAB</a> (version 2025.0.0), which is distributed under the
+<a href="https://opensource.org/licenses/BSD-2-Clause" target="_blank">BSD 2-Clause License</a>.
+Some EEGLAB plugins included in this toolbox may be distributed under different licenses.
+All third-party software and code remain subject to their respective original license terms.
+</p>
+
