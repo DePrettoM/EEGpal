@@ -83,11 +83,10 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 *University of Fribourg, Switzerland*
 
 ## License
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
-<p>
-This toolbox includes components from <a href="https://sccn.ucsd.edu/eeglab/" target="_blank">EEGLAB</a> (version 2025.0.0), which is distributed under the
-<a href="https://opensource.org/licenses/BSD-2-Clause" target="_blank">BSD 2-Clause License</a>.
-Some EEGLAB plugins included in this toolbox may be distributed under different licenses.
-All third-party software and code remain subject to their respective original license terms.
-</p>
+<p>EEGpal is distributed under the BSD 2-Clause License.</p>
+
+<p> Third-party software included in this repository is distributed under its own respective licenses, which may differ from the EEGpal license. Users are responsible for complying with the license terms applicable to each third-party component (see <a href="LICENSE.txt">LICENSE.txt</a>).</p>
+
+## Disclamer
+EEGpal is provided as an open-source toolbox to support EEG data analysis and scientific research. While every effort has been made to ensure the quality and reliability of the software, it is provided "as is", without warranty of any kind, express or implied.
 

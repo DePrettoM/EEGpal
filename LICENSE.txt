@@ -1,24 +1,46 @@
 EEGpal - License File
 
 ============================================================
-1. EEGpal Toolbox License
+EEGpal License (BSD 2-Clause)
 ============================================================
 
-This toolbox is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
+Copyright (c) 2025-2026, Michael Mouthon and Michael DePretto, University of Fribourg
 
-You are free to:
-- Share — copy and redistribute the material
-- Adapt — remix, transform, and build upon the material
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
 
-Under the following terms:
-- Attribution — You must give appropriate credit
-- NonCommercial — You may not use the material for commercial purposes
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
 
-Full license text:
-https://creativecommons.org/licenses/by-nc/4.0/
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+
+IMPORTANT
+
+EEGpal is distributed under the BSD 2-Clause License.
+
+Third-party software included in this repository is distributed under
+its own respective licenses, which may differ from the EEGpal license.
+Users are responsible for complying with the license terms applicable
+to each third-party component.
+
 
 ============================================================
-2. EEGLAB License (BSD 2-Clause)
+EEGLAB (BSD 2-Clause)
 ============================================================
 
 Copyright (C) 2001 Arnaud Delorme and Scott Makeig, Salk Institute,
@@ -52,7 +74,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 
 ============================================================
-3. GNU GPL v3 (clean_rawdata plugin)
+clean_rawdata (GPL v3)
 ============================================================
 
 This plugin is licensed under the GNU General Public License v3.0.
@@ -60,7 +82,7 @@ Full license text:
 https://www.gnu.org/licenses/gpl-3.0.html
 
 ============================================================
-4. GNU GPL v2 (bva-io, firfilt, dipfit plugins)
+bva-io, firfilt and dipfit (GPL v2)
 ============================================================
 
 These plugins are licensed under the GNU General Public License v2.0.
@@ -68,7 +90,7 @@ Full license text:
 https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 ============================================================
-5. GNU GPL (CleanLine plugin)
+CleanLine (GPL)
 ============================================================
 
 This plugin is licensed under the GNU General Public License.
@@ -76,7 +98,7 @@ Full license text:
 https://www.gnu.org/licenses/gpl.html
 
 ============================================================
-6. BSD 3-Clause License (ICALabel plugin)
+ICALabel (BSD 3-Clause)
 ============================================================
 
 This plugin is licensed under the BSD 3-Clause License.
@@ -84,7 +106,7 @@ Full license text:
 https://opensource.org/licenses/BSD-3-Clause
 
 ============================================================
-7. PolyForm Noncommercial 1.0.0 (GEDAI toolbox)
+GEDAI Toolbox (PolyForm Noncommercial 1.0.0)
 ============================================================
 
 This toolbox is licensed under the PolyForm Noncommercial License 1.0.0.
@@ -93,7 +115,3 @@ https://polyformproject.org/licenses/noncommercial/1.0.0/
 
 ============================================================
 
-NOTE:
-Each third-party component included in this repository remains subject to its
-own respective license. Users must comply with all applicable licenses when
-using, modifying, or redistributing this software.
