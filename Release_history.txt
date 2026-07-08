@@ -2,6 +2,9 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 2.15: 08.07.2026 (MM)
+- Change of the licence for BSD 2-Clause
+
 Version 2.14: 24.05.2026 (MM)
 - Update for the Epoching module with
 	- Add the option to concatenate several events together. In the Events section, entering the input [10, 20, 30] will concatenate the events with a marker/trigger of 10, 20 and 30 to compute a single average.
