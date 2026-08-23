@@ -2,6 +2,20 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+Version 2.16:
+- upgrade GEDAI to GEDAI 1.7
+	- added bad channel rejection option (based on ENOVA per channel)
+	- significant speed improvement using 2-step Fast Subspace Iteration
+	- new SENSAI visualization figure for denoising quality control
+	- added support for epoched data
+	- added "sliding window" denoising option for non-stationary EEG recordings (e.g. sleep, epilepsy)
+	- added "warped" leadfield option based on the Colin27 MRI from EEGLAB/Fieldtrip BEM surface source model
+	- further reduced GEDAI's memory footprint
+
+- Change in the Statiscits module
+	- Change the FDR correction so that it only corrects for the number of electrodes (as is done in Cartool). This means that the multiple comparison correction is now performed separately for each TF, rather than by the number of electrodes multiplied by the number of TFs, which is too conservative. This is a major change if you have used the option in previous releases. CAUTION!
+
+
 Version 2.15: 08.07.2026 (MM)
 - Change of the licence for BSD 2-Clause
 
