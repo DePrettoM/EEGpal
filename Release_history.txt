@@ -11,6 +11,7 @@ Version 2.16:
 	- added "sliding window" denoising option for non-stationary EEG recordings (e.g. sleep, epilepsy)
 	- added "warped" leadfield option based on the Colin27 MRI from EEGLAB/Fieldtrip BEM surface source model
 	- further reduced GEDAI's memory footprint
+- add a check in the EEGpalCS_mod_DesignSetting module. If there is one factor and one level, it is automatically a within factor. 
 
 - Change in the Statiscits module
 	- Change the FDR correction so that it only corrects for the number of electrodes (as is done in Cartool). This means that the multiple comparison correction is now performed separately for each TF, rather than by the number of electrodes multiplied by the number of TFs, which is too conservative. This is a major change if you have used the option in previous releases. CAUTION!
