@@ -17,6 +17,9 @@ Version 2.16:
 	- Change the FDR correction so that it only corrects for the number of electrodes (as is done in Cartool). This means that the multiple comparison correction is now performed separately for each TF, rather than by the number of electrodes multiplied by the number of TFs, which is too conservative. This is a major change if you have used the option in previous releases. CAUTION!
 	- A bug in FDR correction has been fixed. Now, correction is performed separately for the EEG channels and the supplementary channels (Avg, GFP and Dis). In the EEG, it is corrected according to the number of electrodes for each TF, and in the supplementary channels, it is corrected according to the number of TFs tested. 
 
+- Small bug correction: 
+	- In the Statistics and PeakTraceExport modules, the SessionsParameter save the time interval in TF rather than ms. It is more robust (I observe a bug of mismatch when I saved the ms instead of TF). 
+
 
 Version 2.15: 08.07.2026 (MM)
 - Change of the licence for BSD 2-Clause
