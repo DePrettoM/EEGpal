@@ -51,7 +51,7 @@ function save_eeglab(SETfilename,thedata,SamplingRate,events,firstindex,channels
 %
 % OUTPUTS
 % - .set file: header + data
-% - .fdt file: data -> NOT ANYMORE! Now data in SET file
+% - .fdt file: data
 %
 %
 % Author: Michael De Pretto (Michael.DePretto@unifr.ch)

@@ -13,9 +13,17 @@ Version 2.16:
 	- further reduced GEDAI's memory footprint
 - add a check in the EEGpalCS_mod_DesignSetting module. If there is one factor and one level, it is automatically a within factor. 
 
-- Change in the Statiscits module
-	- Change the FDR correction so that it only corrects for the number of electrodes (as is done in Cartool). This means that the multiple comparison correction is now performed separately for each TF, rather than by the number of electrodes multiplied by the number of TFs, which is too conservative. This is a major change if you have used the option in previous releases. CAUTION!
+- Change in the Statistics module
+	- Change the FDR correction so that it only corrects for the number of electrodes (as is done in Cartool). This means that the multiple comparison correction is now performed separately for each TF, rather than by the number of electrodes multiplied by the number of TFs, which is too conservative. CAUTION: this is a major change if you have used the option in previous releases. 
 	- A bug in FDR correction has been fixed. Now, correction is performed separately for the EEG channels and the supplementary channels (Avg, GFP and Dis). In the EEG, it is corrected according to the number of electrodes for each TF, and in the supplementary channels, it is corrected according to the number of TFs tested. 
+	- Add the option to save P-values as 1-p (Cartool style) or p
+	- New posibility to perform non-parametric paired or unpaired T-test with Filedtrip
+	- For non-parametric paired or unpaired T-test, it permits now to perform a cluster analysis (new option in the correction methods for multiple comparison dropdown menu). It saves separately the positive (cond1>cond2) and negative (cond1<cond2)clusters. It uses Fieldtrip.
+	- Allow the user the use the Statistics module even if the Matlab Statistical toolbox is not installed, but only for a non-parametric paired or unpaired T-test (because il use the Fieldtrip functions)   
+
+- change in the EEGpal directory
+	- add the Biosemi coordinate file in international convention (64-Biosemi_official.xyz)
+	- In the folder function, ass a sub-folder "fieldtrip" which contains only the functions needed to perform statistics (see modification in the Statistics module). It is not a full version of Fieldtrip !
 
 - Small bug correction: 
 	- In the Statistics and PeakTraceExport modules, the SessionsParameter save the time interval in TF rather than ms. It is more robust (I observe a bug of mismatch when I saved the ms instead of TF). 
