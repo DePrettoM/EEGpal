@@ -2,7 +2,7 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
-Version 2.16:
+Version 2.16: (MM)
 - upgrade GEDAI to GEDAI 1.7
 	- added bad channel rejection option (based on ENOVA per channel)
 	- significant speed improvement using 2-step Fast Subspace Iteration
@@ -24,6 +24,7 @@ Version 2.16:
 - change in the EEGpal directory
 	- add the Biosemi coordinate file in international convention (64-Biosemi_official.xyz)
 	- In the folder function, ass a sub-folder "fieldtrip" which contains only the functions needed to perform statistics (see modification in the Statistics module). It is not a full version of Fieldtrip !
+	- Rename of the electrode coordinate file to be more clear for users.
 
 - Small bug correction: 
 	- In the Statistics and PeakTraceExport modules, the SessionsParameter save the time interval in TF rather than ms. It is more robust (I observe a bug of mismatch when I saved the ms instead of TF). 
