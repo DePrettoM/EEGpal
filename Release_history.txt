@@ -3,6 +3,7 @@ MD=Michael DePretto
 MM=Michael Mouthon
 
 Version 2.16: (MM)
+Major change 1: Upgrade GEDAI
 - upgrade GEDAI to GEDAI 1.7
 	- added bad channel rejection option (based on ENOVA per channel)
 	- significant speed improvement using 2-step Fast Subspace Iteration
@@ -11,8 +12,11 @@ Version 2.16: (MM)
 	- added "sliding window" denoising option for non-stationary EEG recordings (e.g. sleep, epilepsy)
 	- added "warped" leadfield option based on the Colin27 MRI from EEGLAB/Fieldtrip BEM surface source model
 	- further reduced GEDAI's memory footprint
-- add a check in the EEGpalCS_mod_DesignSetting module. If there is one factor and one level, it is automatically a within factor. 
 
+Major change 2: Add statistical cluster analysis + FDR correction change
+- Change in the 'Full Design' tool
+	- add a check : If there is one factor and one level, it is automatically a within factor. 
+	
 - Change in the Statistics module
 	- Change the FDR correction so that it only corrects for the number of electrodes (as is done in Cartool). This means that the multiple comparison correction is now performed separately for each TF, rather than by the number of electrodes multiplied by the number of TFs, which is too conservative. CAUTION: this is a major change if you have used the option in previous releases. 
 	- A bug in FDR correction has been fixed. Now, correction is performed separately for the EEG channels and the supplementary channels (Avg, GFP and Dis). In the EEG, it is corrected according to the number of electrodes for each TF, and in the supplementary channels, it is corrected according to the number of TFs tested. 
@@ -21,6 +25,17 @@ Version 2.16: (MM)
 	- For non-parametric paired or unpaired T-test, it permits now to perform a cluster analysis (new option in the correction methods for multiple comparison dropdown menu). It saves separately the positive (cond1>cond2) and negative (cond1<cond2)clusters. It uses Fieldtrip.
 	- Allow the user the use the Statistics module even if the Matlab Statistical toolbox is not installed, but only for a non-parametric paired or unpaired T-test (because il use the Fieldtrip functions)   
 
+Major change 3: Modify Re-reference module 
+- Change in the Re-reference module
+	- Re-design the windows of the Reref module so that two different sets of re-reference parameters can be specified (Reref1 and Reref2). This would be useful in batch processing if your processing pipeline included two different rereferencings of the data (e.g. Reref1 on Cz at the beginning of the processing for Biosemi data, then Reref2 on the average reference before epoching).
+
+- Change in Batch module
+	- Modify the Batch module to enable two re-references to be performed in the processing pipeline (Rereference_Reref1 and Rereference_Reref2).
+
+- change in the main EEGpal module
+	- A retrocompatibility test will be performed during the loading of SessionParameters files to allow parameter files saved in previous versions of EEGpal to be loaded without any problems. It will convert the old parameters to the new organisation for the Re-reference and Batch tools. WARNING: There will be no backwards compatibility (so you will not be able to load a 2.16 parameter file in an earlier version if it contains Re-reference parameters). 
+
+Smaller changes 
 - change in the EEGpal directory
 	- add the Biosemi coordinate file in international convention (64-Biosemi_official.xyz)
 	- In the folder function, ass a sub-folder "fieldtrip" which contains only the functions needed to perform statistics (see modification in the Statistics module). It is not a full version of Fieldtrip !
