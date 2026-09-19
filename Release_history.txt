@@ -35,6 +35,12 @@ Major change 3: Modify Re-reference module
 - change in the main EEGpal module
 	- A retrocompatibility test will be performed during the loading of SessionParameters files to allow parameter files saved in previous versions of EEGpal to be loaded without any problems. It will convert the old parameters to the new organisation for the Re-reference and Batch tools. WARNING: There will be no backwards compatibility (so you will not be able to load a 2.16 parameter file in an earlier version if it contains Re-reference parameters). 
 
+- change in ICA module
+	- Autodetection in the event of a Reref1 being applied to an electrode other than the 'Average', and insert it in the table of channels to be ignored in the decomposition.
+
+- change in interpolation module
+	- Autodetection in the event of a Reref1 being applied to an electrode other than the 'Average', and insert it in the table of channels to be interpolated.
+	
 Smaller changes 
 - change in the EEGpal directory
 	- add the Biosemi coordinate file in international convention (64-Biosemi_official.xyz)

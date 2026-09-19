@@ -45,8 +45,9 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 | PLUGINS | Description |
 | ------ | ------ |
 | [EEGLAB v2025.0](https://github.com/sccn/eeglab) | Included in the eeglab_plugins of this repository. Use in sveral places. Look at help to know more when it is used. |
+| [Fieldtrip v20260207](https://www.fieldtriptoolbox.org/) | Partial version of Fieldtrip, including only the function to perform non-parametric and cluster analysis statistics. |
 | [Signal processing toolbox]() | Not included but Facultative. Use of the function filtfilt for filtering EEG data (alternative is to use EEGLAB function). | 
-| [Statistics and Machine Learning Toolbox ]() | Not included. It is mandatory only if you use by the Statistics module. | 
+| [Statistics and Machine Learning Toolbox ]() | Not included. It is mandatory to perform multi-factorial parametric analysis with the Statistics module. | 
 
 
 | EEGLAB EXTENSIONS | Description | Already included in the eeglab_plugins repository
@@ -55,7 +56,7 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 | [Cleanline v2.1]| Removes sinusoidal artifacts (line noise). |
 | [ICLabel v1.7]| Seven-category IC classifier using a neural network trained. |
 | [firflit v2.8]| Routines for filtering data. |
-| [GEDAI denoising plugin v1.5]| Generalized Eigenvalue De-Artifacting Instrument. |
+| [GEDAI denoising plugin v1.7]| Generalized Eigenvalue De-Artifacting Instrument. |
 
 
 | ISOLATED FUNCTIONS | Desciption |
