@@ -41,6 +41,8 @@ Major change 3: Modify Re-reference module
 - change in interpolation module
 	- Autodetection in the event of a Reref1 being applied to an electrode other than the 'Average', and insert it in the table of channels to be interpolated.
 	
+	
+	
 Smaller changes 
 - change in the EEGpal directory
 	- add the Biosemi coordinate file in international convention (64-Biosemi_official.xyz)
@@ -49,6 +51,9 @@ Smaller changes
 
 - Small bug correction: 
 	- In the Statistics and PeakTraceExport modules, the SessionsParameter save the time interval in TF rather than ms. It is more robust (I observe a bug of mismatch when I saved the ms instead of TF). 
+	- In the Re-Reference module, change 'contain' to 'strcmp' because it was detecting several reference channels when selecting Cz (it was also selecting C2). Implement new management when several electrodes are selected (using a for loop).
+	- In the Re-Reference module, the cluster parameter in the interface and the aux channel as reference management were deactivated. This functionality was not working properly.  
+	- In the Filtering+ module, deselect the "Remove Flat Line" option by default in the cleanRawData option. It actually removes a channel (instead of flag it), which is a problem. So deactivate it by default. 
 
 
 Version 2.15: 08.07.2026 (MM)
