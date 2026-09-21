@@ -115,3 +115,11 @@ https://polyformproject.org/licenses/noncommercial/1.0.0/
 
 ============================================================
 
+============================================================
+FieldTrip toolbox (GPL v2)
+============================================================
+
+These plugins are licensed under the GNU General Public License v2.0.
+Full license text:
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
