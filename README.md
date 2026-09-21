@@ -45,8 +45,9 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 | PLUGINS | Description |
 | ------ | ------ |
 | [EEGLAB v2025.0](https://github.com/sccn/eeglab) | Included in the eeglab_plugins of this repository. Use in sveral places. Look at help to know more when it is used. |
-| [Signal processing toolbox]() | Not included but Facultative. Use of the function filtfilt for filtering EEG data (alternative is to use EEGLAB function). | 
-| [Statistics and Machine Learning Toolbox ]() | Not included. It is mandatory only if you use by the Statistics module. | 
+| [Fieldtrip v20260207](https://www.fieldtriptoolbox.org/) | Partial version of Fieldtrip, including only the function to perform non-parametric and cluster analysis statistics. |
+| [Signal processing toolbox](https://www.mathworks.com/products/signal.html) | Not included but Facultative. Use of the function filtfilt for filtering EEG data (alternative is to use EEGLAB function). | 
+| [Statistics and Machine Learning Toolbox](https://www.mathworks.com/products/statistics.html) | Not included. It is mandatory to perform multi-factorial parametric analysis with the Statistics module. | 
 
 
 | EEGLAB EXTENSIONS | Description | Already included in the eeglab_plugins repository
@@ -55,12 +56,12 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 | [Cleanline v2.1]| Removes sinusoidal artifacts (line noise). |
 | [ICLabel v1.7]| Seven-category IC classifier using a neural network trained. |
 | [firflit v2.8]| Routines for filtering data. |
-| [GEDAI denoising plugin v1.5]| Generalized Eigenvalue De-Artifacting Instrument. |
+| [GEDAI denoising plugin v1.7]| Generalized Eigenvalue De-Artifacting Instrument. |
 
 
 | ISOLATED FUNCTIONS | Desciption |
 | ------ | ------ |
-| [eBridge.m v0.1.01] (https://psychophysiology.cpmc.columbia.edu/software/eBridge/index.html)| Identify channels within an EEG montage forming a low-impedance |
+| [eBridge.m v0.1.01] (https://psychophysiology.cpmc.columbia.edu/software/ebridge)| Identify channels within an EEG montage forming a low-impedance |
 | [interpolate_perrinX] (https://github.com/mikexcohen/AnalyzingNeuralTimeSeries) |  interpolate electrodes using a 3D Spline method. Develop by Mike X Cohen |
 | [fdr_bh.m] (https://www.mathworks.com/matlabcentral/fileexchange/27418-fdr_bh) |  Executes the Benjamini & Hochberg (1995) procedure for controlling the false discovery rate (FDR) of a family of hypothesis tests (version 2.3.0). Develop by David Groppe |
 

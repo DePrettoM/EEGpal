@@ -1,0 +1,19 @@
+Basic instructions for using the GEDAI plugin for EEGLAB
+
+
+* Step 1: After importing the EEG data, go to **Edit -> Channel locations**, to import channel labels/locations (unless already done so).
+Make sure a) EEG channel labels (e.g. "Fp1", "Fz", etc without any trailing characters) or b) EEG channel locations (e.g. XYZ coordinates) are present in the EEG.chanlocs structure. 
+
+* Step 2:  Launch the GEDAI plugin. We recommend high-passing the data when GEDAI denoising (e.g. low-cut frequency = 0.5 Hz)
+
+* Step 3: For the leadfield matrix type, depending on Step 1 above, a) use option "precomputed", for b) use option "interpolated".
+
+* Step 4: If you prefer to reject very "bad" epochs during denoising (i.e. prevent GEDAI from cleaning them), they can be removed using their ENOVA (Explained Noise Variance), which is bounded between 0 and 1. The ENOVA is the variance explained of the noise removed by GEDAI, expressed as a proportion of the variance of the original EEG data. The default ENOVA threshold (e.g. 0.9) removes epochs with more than 90% noise variance, while a more agressive ENOVA threhold (e.g. 0.3) would remove all epochs > 30% noise.
+
+May the EEG force be with you 👍 
+
+brought to you by: 	NeuroTuning Lab [https://github.com/neurotuning]
+			Center for Biomedical Imaging (CIBM)
+			University of Geneva
+
+			Switzerland

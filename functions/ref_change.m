@@ -60,8 +60,8 @@ end
 
 % Isolate auxiliary channels
 if nargin == 3 && (strcmpi(aux,'aux') || strcmpi(aux,'ext'))
-    AuxData = thedata(:,aux);
-    thedata(:,aux) = [];
+    AuxData = thedata(:,ref);
+    thedata(:,ref) = [];
 elseif nargout == 2
     AuxData = [];
 end
