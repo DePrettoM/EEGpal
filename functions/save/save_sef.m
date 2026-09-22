@@ -21,11 +21,11 @@ function save_sef(savefilename,thedata,SamplingRate,Channels,events,firstindex,n
 %   - the code of each event are in the last column
 %   /!\ IMPORTANT: The time-frames must be set according to a first index
 %   position of 0, as in Cartool.
-% - (optional) 'nAux' is the number of auxiliary channels
 % - (optional) 'firstindex' is the position index of the first time-frame
 %   (0 or 1). Because Cartool counts time-frames starting from 0, if the
 %   first index is 1, 1 will be removed from each event values. Any other
 %   value will be refused, because it doesn't make any sense!
+% - (optional) 'nAux' is the number of auxiliary channels
 %   Default: empty
 %
 % OUTPUTS
