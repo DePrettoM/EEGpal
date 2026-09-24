@@ -2,7 +2,14 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+<<<<<<< Updated upstream
 Version 2.16: (MM)
+=======
+Version 2.2 : xx.xx.xx (MM)
+- upgrade to EEGLAB 2026.1
+
+Version 2.16: 21.09.2026(MM)
+>>>>>>> Stashed changes
 Major change 1: Upgrade GEDAI
 - upgrade GEDAI to GEDAI 1.7
 	- added bad channel rejection option (based on ENOVA per channel)
