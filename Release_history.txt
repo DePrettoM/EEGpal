@@ -2,6 +2,10 @@ EEGpal release history
 MD=Michael DePretto
 MM=Michael Mouthon
 
+
+Version 2.2 : 10.10.2026 (MM)
+- upgrade to EEGLAB 2026.1
+
 Version 2.16: 21.09.2026(MM)
 Major change 1: Upgrade GEDAI
 - upgrade GEDAI to GEDAI 1.7
@@ -40,6 +44,7 @@ Major change 3: Modify Re-reference module
 
 - change in interpolation module
 	- Autodetection in the event of a Reref1 being applied to an electrode other than the 'Average', and insert it in the table of channels to be interpolated.
+	
 	
 	
 Smaller changes 

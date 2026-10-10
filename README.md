@@ -44,7 +44,7 @@ De Pretto M., Mouthon M., EEGpal, (2024), GitHub repository, https://github.com/
 ## Dependencies
 | PLUGINS | Description |
 | ------ | ------ |
-| [EEGLAB v2025.0](https://github.com/sccn/eeglab) | Included in the eeglab_plugins of this repository. Use in sveral places. Look at help to know more when it is used. |
+| [EEGLAB v2026.1](https://github.com/sccn/eeglab) | Included in the eeglab_plugins of this repository. Use in sveral places. Look at help to know more when it is used. |
 | [Fieldtrip v20260207](https://www.fieldtriptoolbox.org/) | Partial version of Fieldtrip, including only the function to perform non-parametric and cluster analysis statistics. |
 | [Signal processing toolbox](https://www.mathworks.com/products/signal.html) | Not included but Facultative. Use of the function filtfilt for filtering EEG data (alternative is to use EEGLAB function). | 
 | [Statistics and Machine Learning Toolbox](https://www.mathworks.com/products/statistics.html) | Not included. It is mandatory to perform multi-factorial parametric analysis with the Statistics module. | 
